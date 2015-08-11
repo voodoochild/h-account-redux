@@ -1,0 +1,19 @@
+// _icons.scss
+
+@font-face {
+    font-family: 'hcom-icons';
+    src: url('../fonts/hcom-icons.eot');
+    src: url('../fonts/hcom-icons.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/hcom-icons.woff') format('woff'),
+         url('../fonts/hcom-icons.ttf') format('truetype'),
+         url('../fonts/hcom-icons.svg#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.icon {
+    font-family: 'hcom-icons';
+    font-size: 1em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}

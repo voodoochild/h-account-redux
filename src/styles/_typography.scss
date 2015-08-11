@@ -1,0 +1,39 @@
+// _typography.scss
+
+html {
+    font-size: 62.5%;
+    font-size: (10/16) * 1em;
+    font-family: $sans-serif;
+}
+
+body {
+    font-size: 100%;
+    font-size: 1.6em;
+    font-weight: 300;
+    line-height: 1.5;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: $sans-serif;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+}
+
+h1 {
+    @include font-size(22, 66);
+    font-weight: 300;
+}
+
+button {
+    font-weight: bold;
+}
+
+.hide-text {
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+#banner {
+    text-align: center;
+}

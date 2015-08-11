@@ -1,0 +1,134 @@
+@charset 'utf-8';
+
+@import '../../bower_components/normalize-scss/_normalize';
+@import '_variables';
+@import '_mixins';
+@import '_typography';
+@import '_icons';
+
+* {
+    box-sizing: border-box;
+}
+
+* + * {
+    margin-top: 1em;
+}
+
+body {
+    background-color: $offWhite;
+    color: $warmGrey;
+}
+
+a {
+    color: $cerulean;
+    text-decoration: none;
+}
+
+button {
+    background-color: transparent;
+    border: 2px solid $cerulean;
+    border-radius: 6px;
+    color: $cerulean;
+    padding: .5em;
+}
+
+#banner {
+    background: linear-gradient(to bottom, $banner-gradient-top 0, $banner-gradient-bottom 100%);
+    border-top: 1px solid $banner-gradient-bottom;
+    border-bottom: 1px solid $banner-border-bottom;
+    min-height: 58px;
+    position: relative;
+}
+
+#site-nav {
+    height: 40px;
+    width: 40px;
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    margin-top: 0;
+}
+
+#site-nav .icon {
+    color: white;
+    @include font-size(20, 40);
+}
+
+.logo {
+    margin-top: -72px;
+}
+
+main {
+    margin-top: 0;
+}
+
+h1 {
+    color: $greyishBrown;
+    margin: 0;
+    padding: 0 16px;
+    position: relative;
+}
+
+.avatar {
+    border: 1px solid $avatar-border;
+    border-radius: 50%;
+    height: 2em;
+    margin-left: 16px;
+    position: absolute;
+    top: .5em;
+}
+
+.page-nav {
+    border-bottom: 1px solid $nav-separator;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.page-nav li {
+    background-image: url(../images/arrow.png);
+    background-position: right 16px center;
+    background-repeat: no-repeat;
+    background-size: 11px 18px;
+    border-top: 1px solid $nav-separator;
+    margin-top: 0;
+}
+
+.page-nav a {
+    color: $warmGrey;
+    display: block;
+    margin-right: 20px;
+    padding: 16px;
+}
+
+#footer {
+    background-color: $lightGrey;
+    margin-top: 0;
+}
+
+#footer section {
+    padding: 20px 16px;
+}
+
+#footer section + section {
+    border-top: 1px solid $footer-separator;
+    margin-top: 0;
+}
+
+#footer p {
+    margin-top: 0;
+}
+
+.flex-buttons {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.flex-buttons button {
+    flex-grow: 1;
+    max-width: 276px;
+}
+
+.flex-buttons button + button {
+    margin-left: 1em;
+}
