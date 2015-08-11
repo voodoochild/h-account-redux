@@ -20,7 +20,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-    @include font-size(22, 66);
+    @include font-size(22, 32);
+    font-weight: 300;
+}
+
+h2 {
+    @include font-size(18);
     font-weight: 300;
 }
 
@@ -34,6 +39,9 @@ button {
     overflow: hidden;
 }
 
-#banner {
-    text-align: center;
+@include from-breakpoint(mediumlarge) {
+    #account-nav,
+    #secondary-nav {
+        @include font-size(14);
+    }
 }

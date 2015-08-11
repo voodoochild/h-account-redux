@@ -32,30 +32,156 @@ button {
     padding: .5em;
 }
 
+.signed-out .member,
+.signed-in .anon {
+    display: none !important;
+}
+
+#user-toggle {
+    position: fixed;
+    bottom: 16px;
+    right: 16px;
+    opacity: .1;
+    transition: opacity .2s linear;
+
+    &:hover {
+        opacity: .8;
+    }
+}
+
 #banner {
     background: linear-gradient(to bottom, $banner-gradient-top 0, $banner-gradient-bottom 100%);
     border-top: 1px solid $banner-gradient-bottom;
     border-bottom: 1px solid $banner-border-bottom;
     min-height: 58px;
     position: relative;
+    text-align: center;
+
+    @include from-breakpoint(mediumlarge) {
+        text-align: left;
+    }
 }
 
-#site-nav {
-    height: 40px;
-    width: 40px;
+#nav-toggle {
     position: absolute;
     top: 8px;
     left: 8px;
     margin-top: 0;
-}
-
-#site-nav .icon {
-    color: white;
+    color: $offWhite;
+    height: 40px;
+    width: 40px;
     @include font-size(20, 40);
+    @include from-breakpoint(mediumlarge) {
+        display: none;
+    }
 }
 
-.logo {
-    margin-top: -72px;
+#account-nav {
+    background-color: $lightGrey;
+    display: none;
+    padding: 0 16px;
+    position: absolute;
+    top: 42px;
+    left: 0;
+    z-index: 1;
+
+    &.expanded {
+        display: block;
+    }
+}
+
+#account-nav .extended {
+    display: none;
+}
+
+#account-nav ul {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+}
+
+#banner .username {
+    color: $offWhite;
+    position: absolute;
+    top: 0;
+    right: 16px;
+}
+
+@include from-breakpoint(mediumlarge) {
+    #account-nav {
+        background-color: transparent;
+        display: block;
+        margin: 0;
+        padding: 0;
+        top: 8px;
+        bottom: 0;
+        left: auto;
+        right: 16px;
+    }
+
+    #account-nav .dropdown {
+        display: none;
+    }
+
+    #account-nav .extended {
+        display: block;
+        margin-top: 0;
+    }
+
+    #account-nav li {
+        color: $offWhite;
+        display: inline-block;
+    }
+
+    #account-nav li + li {
+        margin-left: .5em;
+    }
+
+    #account-nav a {
+        color: $offWhite;
+    }
+
+    #banner .username {
+        display: none;
+    }
+}
+
+#banner .logo {
+    margin-top: -62px;
+
+    @include from-breakpoint(medium) {
+        margin-left: -42px;
+    }
+}
+
+#secondary-nav {
+    display: none;
+}
+
+@include from-breakpoint(mediumlarge) {
+    #secondary-nav {
+        background-color: $lightGrey;
+        display: block;
+        margin-top: -16px;
+    }
+
+    #secondary-nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 16px;
+    }
+
+    #secondary-nav li {
+        display: inline-block;
+    }
+
+    #secondary-nav li + li {
+        margin-left: .5em;
+    }
+
+    #secondary-nav .right {
+        float: right;
+    }
 }
 
 main {
@@ -65,7 +191,7 @@ main {
 h1 {
     color: $greyishBrown;
     margin: 0;
-    padding: 0 16px;
+    padding: 16px;
     position: relative;
 }
 
@@ -131,4 +257,45 @@ h1 {
 
 .flex-buttons button + button {
     margin-left: 1em;
+}
+
+.content-wrap {
+    margin-top: 0;
+    padding: 0 16px 16px;
+}
+
+#bookings {
+    list-style: none;
+    padding: 0;
+}
+
+.booking {
+    border: 1px solid $warmGrey;
+    color: $greyishBrown;
+}
+
+.booking h3 {
+    margin-top: 0;
+}
+
+.booking a {
+    display: block;
+    padding: 16px;
+}
+
+.booking.cancelled {
+    background-color: $lightGrey;
+}
+
+@include from-breakpoint(mediumlarge) {
+    .flex-forms {
+        display: flex;
+        flex-wrap: nowrap;
+    }
+
+    .formgroup {
+        flex-grow: 1;
+        margin-top: 0;
+        width: 50%;
+    }
 }
