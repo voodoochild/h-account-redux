@@ -1,61 +1,8 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="mobile-web-app-capable" content="yes">
-  <title>Your bookings | Account Redux</title>
-  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,600">
-  <link rel="stylesheet" href="styles/app.css">
-</head>
+@@include("_head.html", { "title": "Your bookings" })
 <body class="signed-in">
-  <header id="banner" role="banner">
-    <img class="logo" src="images/hotels_com_logo_en_GB.png" width="270px" />
-    <a id="nav-toggle" href="#" class="icon">&#xe035;</a>
-    <nav id="account-nav">
-      <ul class="dropdown">
-        <li><a href="home.html">Home</a></li>
-        <li><a href="#">Local deals for tonight</a></li>
-        <li class="member">Jackson Howard:</li>
-        <li>
-          <a class="anon" href="find-bookings.html">Your bookings</a>
-          <a class="member" href="bookings.html">Your bookings (1)</a>
-        </li>
-        <li><a href="rewards.html">Hotels.com Rewards</a></li>
-        <li>
-          <a class="anon" href="#">Sign in</a>
-          <a class="member" href="index.html">Your Account</a>
-        </li>
-        <li><a href="help.html">Help</a></li>
-        <li class="member"><a href="#">Sign out</a></li>
-      </ul>
-      <ul class="extended">
-        <li class="member">Jackson Howard:</li>
-        <li>
-          <a class="anon" href="#">Sign in</a>
-          <a class="member" href="index.html">Your Account</a>
-        </li>
-        <li><a href="rewards.html">Hotels.com Rewards</a></li>
-        <li><a href="help.html">Help</a></li>
-        <li>
-          <a class="anon" href="find-bookings.html">Your bookings</a>
-          <a class="member" href="bookings.html">Your bookings (1)</a>
-        </li>
-      </ul>
-    </nav>
-    <span class="member username">Jackson Howard</span>
-  </header>
+  @@include("_banner.html")
   <main>
-    <div id="secondary-nav">
-      <ul>
-				<li><a href="home.html">Home</a></li>
-				<li>Hotel deals</li>
-				<li>Packages and flights</li>
-				<li>Groups</li>
-				<li>Gift cards</li>
-				<li class="right">Phone</li>
-			</ul>
-    </div>
+    @@include("_secondary-nav.html")
     <h1>Your bookings (1 upcoming)</h1>
     <div class="content-wrap">
       <p>Can’t see your booking below? <a href="find-bookings.html">Find a booking</a> using your confirmation number or payment card number</p>
@@ -99,19 +46,7 @@
   		</ol>
     </div>
   </main>
-  <footer id="footer">
-    <section>
-      <p>Did you accomplish what you wanted to do on this page?</p>
-      <div class="flex-buttons">
-        <button>Yes</button>
-        <button>No</button>
-      </div>
-    </section>
-    <section>
-      <p><a href="#">Check out our help and support articles about *topic*</a></p>
-      <p>Still need help with *topic*? Call us on <a href="#">123 456789</a></p>
-    </section>
-  </footer>
+  @@include("_footer.html")
   <button id="user-toggle">Toggle login</button>
   <script src="js/app.js"></script>
 </body>

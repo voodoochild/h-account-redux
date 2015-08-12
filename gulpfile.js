@@ -5,6 +5,7 @@ var sourcemaps = require('gulp-sourcemaps');
 var del = require('del');
 var browserSync = require('browser-sync');
 var reload = browserSync.reload;
+var fileinclude = require('gulp-file-include');
 
 function clean () {
     del.sync(['./dist/*'], { force: true }, function (err, paths) {
@@ -14,7 +15,11 @@ function clean () {
 }
 
 function moveStaticFiles () {
-    gulp.src('./src/**/*.html').pipe(gulp.dest('./dist')).pipe(reload({ stream: true }));
+    gulp.src('./src/*.html')
+        .pipe(fileinclude({ basepath: './src/partials' }))
+        .pipe(gulp.dest('./dist'))
+        .pipe(reload({ stream: true }));
+
     gulp.src('./src/images/**/*').pipe(gulp.dest('./dist/images')).pipe(reload({ stream: true }));
     gulp.src('./src/fonts/**/*').pipe(gulp.dest('./dist/fonts')).pipe(reload({ stream: true }));
 }
