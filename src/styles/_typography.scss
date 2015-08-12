@@ -62,7 +62,7 @@ label {
 }
 
 #footer {
-    @include font-size(14);
+    @include font-size(14, 20);
 }
 
 #footer button {

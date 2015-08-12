@@ -1,6 +1,5 @@
 {
-  "name": "account-redux",
-  "version": "0.1.0",
+  "name": "h-account-redux",
   "devDependencies": {
     "normalize-scss": "~3.0.3"
   }

@@ -1,6 +1,17 @@
 {
-  "name": "account-redux",
-  "version": "0.1.0",
+  "name": "h-account-redux",
+  "version": "0.1.1",
+  "author": "Kriss Watt <kriss.watt@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/voodoochild/h-account-redux"
+  },
+  "bugs": {
+    "url": "https://github.com/voodoochild/h-account-redux/issues"
+  },
+  "scripts": {
+    "start": "gulp"
+  },
   "devDependencies": {
     "browser-sync": "^2.8.2",
     "del": "^1.2.0",
