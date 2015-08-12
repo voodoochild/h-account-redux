@@ -1,0 +1,16 @@
+// _forms.scss
+
+label {
+    color: $warmGrey;
+    display: block;
+}
+
+input[type=text] {
+    border-radius: 3px;
+    padding: 5px;
+    width: 288px;
+}
+
+label + input {
+    margin-top: 1em;
+}
