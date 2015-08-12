@@ -56,3 +56,15 @@ label {
 .account-settings .edit-cta {
     @include font-size(14, 20);
 }
+
+.note {
+    @include font-size(14);
+}
+
+#footer {
+    @include font-size(14);
+}
+
+#footer button {
+    @include font-size(16, 24);
+}

@@ -2,6 +2,7 @@
     let navToggle = document.getElementById('nav-toggle');
     let siteNav = document.getElementById('account-nav');
     let userToggle = document.getElementById('user-toggle');
+    let footer = document.getElementById('footer');
 
     function signout () {
         document.body.classList.remove('signed-in');

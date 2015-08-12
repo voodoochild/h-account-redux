@@ -16,7 +16,7 @@
 }
 
 body {
-    background-color: $offWhite;
+    background-color: $lightGrey;
     color: $warmGrey;
 }
 
@@ -31,13 +31,13 @@ a {
 
 button {
     background-color: transparent;
-    border: 2px solid $cerulean;
+    border: 1px solid $cerulean;
     border-radius: 6px;
     color: $cerulean;
     padding: .5em;
 }
 
-button.important {
+button.primary {
     background-color: $cerulean;
     color: $offWhite;
 }
@@ -113,9 +113,20 @@ button.important {
 
 #banner .username {
     color: $offWhite;
+    margin-top: 0;
     position: absolute;
-    top: 0;
+    top: 11px;
     right: 16px;
+}
+
+#account-nav .avatar-wrap {
+    position: relative;
+}
+
+#account-nav .avatar {
+    top: -20px;
+    left: -28px;
+    margin: 0;
 }
 
 @include from-breakpoint(mediumlarge) {
@@ -196,6 +207,7 @@ button.important {
 }
 
 main {
+    background-color: $offWhite;
     margin-top: 0;
 }
 
@@ -207,6 +219,7 @@ h1 {
 }
 
 .avatar {
+    background-color: $offWhite;
     border: 1px solid $avatar-border;
     border-radius: 50%;
     height: 2em;
@@ -232,9 +245,14 @@ h1 {
 }
 
 .page-nav a {
+    color: $warmGrey;
     display: block;
     margin-right: 20px;
     padding: 16px;
+
+    @include from-breakpoint(mediumlarge) {
+        color: $cerulean;
+    }
 }
 
 .page-nav .about {
@@ -248,8 +266,8 @@ h1 {
 }
 
 #footer {
-    background-color: $lightGrey;
     margin-top: 0;
+    padding-top: 16px;
 }
 
 #footer section {
@@ -284,9 +302,13 @@ h1 {
     padding: 0 16px 16px;
 }
 
-#bookings {
+.bookings {
     list-style: none;
     padding: 0;
+
+    @include from-breakpoint(large) {
+        margin-right: 336px;
+    }
 }
 
 .booking {
@@ -307,6 +329,32 @@ h1 {
     background-color: $lightGrey;
 }
 
+.note {
+    color: $otherGrey;
+}
+
+.bookings-content {
+    position: relative;
+}
+
+.bookings-filler {
+    display: none;
+    position: absolute;
+    top: 82px;
+    right: 16px;
+    width: 320px;
+
+    @include from-breakpoint(large) {
+        display: block;
+    }
+}
+
+.facebook-signin {
+    border-top: 1px solid $nav-separator;
+    margin-top: 2em;
+    padding-top: 1em;
+}
+
 @include from-breakpoint(mediumlarge) {
     .flex-forms {
         display: flex;
@@ -317,6 +365,16 @@ h1 {
         flex-grow: 1;
         margin-top: 0;
         width: 50%;
+    }
+
+    .signed-out .formgroup:first-child {
+        border-right: 1px solid $nav-separator;
+        margin-right: 2em;
+        padding-right: 2em;
+    }
+
+    .signed-out .formgroup:nth-child(2) {
+        padding-left: 2em;
     }
 }
 

@@ -1,5 +1,5 @@
 @@include("_head.html", { "title": "Find a booking" })
-<body class="signed-in">
+<body class="signed-out">
   @@include("_banner.html")
   <main>
     @@include("_secondary-nav.html")
@@ -21,10 +21,10 @@
   				</div>
   				<p><a href="#">Forgotten your password?</a></p>
   				<div class="field">
-  					<button type="submit" class="button">Sign in</button>
+  					<button type="submit" class="button primary">Sign in</button>
   				</div>
   			</div>
-  			<div>
+  			<div class="facebook-signin">
   				<h2>Sign in using Facebook</h2>
   				<button id="btn_signin_submit" type="submit" class="button primary">Sign in using Facebook</button>
   			</div>
@@ -43,7 +43,9 @@
   			</div>
         <p><a href="#">Don't know your confirmation number?</a></p>
   			<div class="field">
-  				<button type="submit" class="button">Find booking</button>
+          <form action="bookings.html">
+    				<button type="submit" class="button primary">Find booking</button>
+          </form>
   			</div>
   			<p>If you don’t have these details to hand, we can <a href="#">send you an email which lists of all your bookings</a></p>
   		</div>
