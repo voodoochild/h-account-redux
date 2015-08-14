@@ -48,18 +48,6 @@ button.primary {
     display: none !important;
 }
 
-#user-toggle {
-    position: fixed;
-    bottom: 16px;
-    right: 16px;
-    opacity: .1;
-    transition: opacity .2s linear;
-
-    &:hover {
-        opacity: .8;
-    }
-}
-
 #banner {
     background: linear-gradient(to bottom, $banner-gradient-top 0, $banner-gradient-bottom 100%);
     border-top: 1px solid $banner-gradient-bottom;
