@@ -25,17 +25,12 @@ h1 {
 }
 
 h2 {
-    font-weight: 600;
+    font-weight: 700;
     @include font-size(16, 20);
 }
 
-button {
-    font-family: 'Helvetica Neue', $sans-serif;
-    font-weight: 500;
-}
-
 label {
-    font-weight: 600;
+    font-weight: 700;
 }
 
 .hide-text {
@@ -52,7 +47,6 @@ label {
     }
 }
 
-.account-settings .summary,
 .account-settings .edit-cta {
     @include font-size(14, 20);
 }
@@ -67,4 +61,8 @@ label {
 
 #footer button {
     @include font-size(16, 24);
+}
+
+.error-message {
+    @include font-size(14);
 }

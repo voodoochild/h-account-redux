@@ -6,54 +6,18 @@
     <h1>Your bookings (1 upcoming)</h1>
     <div class="content-wrap bookings-content">
       <p>Can’t see your booking below? <a href="find-bookings.html">Find a booking</a> using your confirmation number or payment card number</p>
-      <input id="search-bookings" type="text" placeholder="Enter a hotel name or destination">
-      <button>Search your bookings</button>
-      <ol class="bookings">
-  			<li class="booking">
-  				<a href="view-reservation.html">
-  					<h3>Patio Hotel and Urban Resort</h3>
-  					<div class="contact">Phnom&nbsp;Penh, Cambodia</div>
-  					<div class="check-in">Check in: Thu, 12th Oct 2015 </div>
-  					<div class="check-out">	Check out: Sun, 16th Oct 2015 </div>
-  					<div class="confirmation">Confirmation number: 9876543210</div>
-  				</a>
-  			</li>
-  			<li class="booking cancelled member">
-  				<a href="view-reservation.html">
-  					<h3>Backpacker Hostel (cancelled)</h3>
-  					<div class="contact">Phnom&nbsp;Penh, Cambodia</div>
-  					<div class="check-in">Check in: Thu, 12th Oct 2015 </div>
-  					<div class="check-out">	Check out: Sun, 16th Oct 2015 </div>
-  					<div class="confirmation">Confirmation number: 9876543211</div>
-  				</a>
-  			</li>
-      </ol>
-      <h2>Past bookings</h2>
-      <ol class="bookings">
-  			<li class="booking member">
-  				<a href="view-reservation.html">
-  					<h3>The Grand Hotel Brighton</h3>
-  					<div class="contact">Brighton, GB</div>
-  					<div class="check-in">Check in: Sat, 12th Apr 2015 </div>
-  					<div class="check-out">	Check out: Sun, 13th Apr 2015 </div>
-  					<div class="confirmation">Confirmation number: 8876543211</div>
-  				</a>
-  			</li>
-  			<li class="booking member">
-  				<a href="view-reservation.html">
-  					<h3>Hotel des Arts</h3>
-  					<div class="contact">Amsterdam, Netherlands</div>
-  					<div class="check-in">Check in: Sat, 1st Aug 2014 </div>
-  					<div class="check-out">	Check out: Sun, 8th Aug 2014 </div>
-  					<div class="confirmation">Confirmation number: 7876543211</div>
-  				</a>
-  			</li>
-  		</ol>
+      <div class="hidden">
+        <input id="search-bookings" type="text" placeholder="Enter a hotel name or destination">
+        <button>Search your bookings</button>
+      </div>
+      <ol id="bookings-active" class="bookings"></ol>
+      <h2 id="past-bookings-heading" class="hidden">Past bookings</h2>
+      <ol id="bookings-past" class="bookings"></ol>
       <img class="bookings-filler" src="images/filler.png" />
     </div>
   </main>
   @@include("_footer.html")
   <button id="user-toggle">Toggle login</button>
-  <script src="js/app.js"></script>
+  <script src="js/bundle.js"></script>
 </body>
 </html>

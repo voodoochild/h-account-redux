@@ -42,6 +42,7 @@ button.primary {
     color: $offWhite;
 }
 
+.hidden,
 .signed-out .member,
 .signed-in .anon {
     display: none !important;
@@ -333,6 +334,10 @@ h1 {
     color: $otherGrey;
 }
 
+.account-settings .note {
+    margin-bottom: 1em;
+}
+
 .bookings-content {
     position: relative;
 }
@@ -388,6 +393,7 @@ h1 {
 .account-settings li {
     border-top: 1px solid $nav-separator;
     margin-top: 0;
+    min-height: 93px;
     padding: 16px;
     position: relative;
 }
@@ -412,4 +418,15 @@ h1 {
     right: 16px;
     max-width: 30%;
     text-align: right;
+}
+
+.account-settings .edit-form button {
+    margin-top: 2em;
+    width: 100%;
+}
+
+@include from-breakpoint(mediumlarge) {
+    #footer-nav {
+        display: none;
+    }
 }

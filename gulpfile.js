@@ -1,11 +1,13 @@
 var gulp = require('gulp');
+var concat = require('gulp-concat');
 var sass = require('gulp-sass');
 var babel = require('gulp-babel');
+var uglify = require('gulp-uglify');
+var fileinclude = require('gulp-file-include');
 var sourcemaps = require('gulp-sourcemaps');
 var del = require('del');
 var browserSync = require('browser-sync');
 var reload = browserSync.reload;
-var fileinclude = require('gulp-file-include');
 
 function clean () {
     del.sync(['./dist/*'], { force: true }, function (err, paths) {
@@ -14,37 +16,55 @@ function clean () {
     });
 }
 
-function moveStaticFiles () {
-    gulp.src('./src/*.html')
+function buildHTML () {
+    return gulp.src('./src/*.html')
         .pipe(fileinclude({ basepath: './src/partials' }))
         .pipe(gulp.dest('./dist'))
         .pipe(reload({ stream: true }));
+}
 
-    gulp.src('./src/images/**/*').pipe(gulp.dest('./dist/images')).pipe(reload({ stream: true }));
-    gulp.src('./src/fonts/**/*').pipe(gulp.dest('./dist/fonts')).pipe(reload({ stream: true }));
+function buildImages () {
+    return gulp.src('./src/images/**/*')
+        .pipe(gulp.dest('./dist/images'))
+        .pipe(reload({ stream: true }));
+}
+
+function buildFonts () {
+    return gulp.src('./src/fonts/**/*')
+        .pipe(gulp.dest('./dist/fonts'))
+        .pipe(reload({ stream: true }));
 }
 
 function buildCSS () {
     gulp.src('./src/styles/**/*.scss')
+        .pipe(sourcemaps.init())
         .pipe(sass({ outputStyle: 'compressed' })).on('error', sass.logError)
-        .pipe(sourcemaps.init({ loadMaps: true }))
-        .pipe(sourcemaps.write('./'))
         .pipe(gulp.dest('./dist/styles'))
+        .pipe(sourcemaps.write())
         .pipe(reload({ stream: true }));
 }
 
 function buildJS () {
-    gulp.src('./src/js/**/*.js')
+    var jsFiles = [
+        // './bower_components/velocity/velocity.min.js',
+        './src/js/bookings-data.js',  // needs to be loaded before app.js
+        './src/js/**/*.js'
+    ];
+    return gulp.src(jsFiles)
+        .pipe(sourcemaps.init())
         .pipe(babel())
-        .pipe(sourcemaps.init({ loadMaps: true }))
-        .pipe(sourcemaps.write('./'))
+        .pipe(concat('bundle.js'))
+        // .pipe(uglify())
         .pipe(gulp.dest('./dist/js'))
+        .pipe(sourcemaps.write())
         .pipe(reload({ stream: true }));
 }
 
 gulp.task('build', function () {
     clean();
-    moveStaticFiles();
+    buildHTML();
+    buildImages();
+    buildFonts();
     buildCSS();
     buildJS();
 });
@@ -56,7 +76,9 @@ gulp.task('serve', ['build'], function () {
         }
     });
 
-    gulp.watch(['src/**/*.html', 'src/images/**/*', 'src/fonts/**/*'], moveStaticFiles);
+    gulp.watch('src/**/*.html', buildHTML);
+    gulp.watch('src/images/**/*', buildImages);
+    gulp.watch('src/fonts/**/*', buildFonts);
     gulp.watch('src/styles/**/*.scss', buildCSS);
     gulp.watch('src/js/**/*.js', buildJS);
 });

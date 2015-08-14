@@ -8,24 +8,64 @@
     	<li>
     		<h2>Your details</h2>
     		<div class="summary">
-    			<p>John Smith</p>
-    			<p>1 Rodeo Drive, Beverley Hills, CA, 90210, USA</p>
-    			<p>123 456789</p>
+    			<p><span data-key="name">Jackson</span> <span data-key="surname">Howard</span></p>
+    			<p data-key="address">1 Rodeo Drive, Beverley Hills, California, 90210, USA</p>
+    			<p data-key="telephone">+1 310-275-5575</p>
     		</div>
+        <form class="edit-form hidden">
+          <label for="name">Name</label>
+          <input type="text" name="name" id="name" value="Jackson" />
+          <label for="surname">Last name</label>
+          <input type="text" name="surname" id="surname" value="Howard" />
+          <label for="address-line-1">Address line 1</label>
+          <input type="text" name="address-line-1" id="address-line-1" value="1 Rodeo Drive" />
+          <label for="address-line-2">Address line 2</label>
+          <input type="text" name="address-line-2" id="address-line-2" value="Beverley Hills" />
+          <label for="address-city">City</label>
+          <input type="text" name="address-city" id="address-city" value="" />
+          <label for="address-state">State/province</label>
+          <select name="address-state" id="address-state">
+            <option>California</option>
+          </select>
+          <label for="address-zip">Zip/postal code</label>
+          <input type="text" name="address-zip" id="address-zip" value="90210" />
+          <label for="address-country">Country</label>
+          <select name="address-country" id="address-country">
+            <option value="USA">United States</option>
+          </select>
+          <label for="telephone">Telephone</label>
+          <input type="text" name="telephone" id="telephone" value="+1 310-275-5575" />
+          <label for="company">Company name</label>
+          <input type="text" name="company" id="company" value="" />
+          <button type="submit" class="primary">Save changes</button>
+        </form>
         <a href="#" class="edit-cta">Edit</a>
     	</li>
     	<li>
     		<h2>Email address</h2>
     		<div class="summary">
-    			<p>johnsmith@gmail.com</p>
+    			<p data-key="email">jacksonhoward@nbn.corp</p>
     		</div>
+        <form class="edit-form hidden">
+          <label for="email" class="hidden">Email address</label>
+          <input type="text" name="email" id="email" value="jacksonhoward@nbn.corp" />
+          <p class="error-message hidden">Invalid email address</p>
+          <button type="submit" class="primary">Save changes</button>
+        </form>
         <a href="#" class="edit-cta">Edit</a>
     	</li>
     	<li>
     		<h2>Password</h2>
     		<div class="summary">
-    			<p>*********</p>
+    			<p data-key="password">*********</p>
     		</div>
+        <form class="edit-form hidden">
+          <label for="password" class="hidden">Password</label>
+          <p class="note">6 to 20 letters, with at least 1 number</p>
+          <input type="password" name="password" id="password" value="p4ssw0rd" />
+          <p class="error-message hidden">Invalid password</p>
+          <button type="submit" class="primary">Save changes</button>
+        </form>
         <a href="#" class="edit-cta">Edit</a>
     	</li>
     	<li>
@@ -34,23 +74,35 @@
     			<p>US site browsing</p>
     			<p>US dollar currency</p>
     		</div>
+        <form class="edit-form hidden">
+          <p>POS selector would go here</p>
+        </form>
         <a href="#" class="edit-cta">Edit</a>
     	</li>
     	<li>
     		<h2>Facebook settings</h2>
     		<div class="summary">
-    			<p>Not connected</p>
+    			<p data-key="facebook">Connected</p>
     		</div>
+        <form class="edit-form hidden">
+          <p>Something something Facebook sign in</p>
+          <input type="hidden" name="facebook" id="facebook" value="Not connected" />
+          <button type="submit" class="primary">Disconnect from Facebook</button>
+        </form>
         <a href="#" class="edit-cta">Edit</a>
     	</li>
     	<li>
     		<h2>Want to delete this account?</h2>
     		<a href="#" class="edit-cta">Delete your account here</a>
+        <form class="edit-form hidden" action="deleted.html">
+          <p>Stay now! Baby if you've got to go away, don't think I can take the pain, won't you stay another day? STAY NOW.</p>
+          <button type="submit" class="primary">Delete it. I'm outta here!</button>
+        </form>
     	</li>
     </ul>
   </main>
   @@include("_footer.html")
   <button id="user-toggle">Toggle login</button>
-  <script src="js/app.js"></script>
+  <script src="js/bundle.js"></script>
 </body>
 </html>

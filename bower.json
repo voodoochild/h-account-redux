@@ -1,6 +1,7 @@
 {
   "name": "h-account-redux",
   "devDependencies": {
-    "normalize-scss": "~3.0.3"
+    "normalize-scss": "~3.0.3",
+    "velocity": "~1.2.2"
   }
 }
