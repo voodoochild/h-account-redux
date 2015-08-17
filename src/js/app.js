@@ -17,7 +17,12 @@
     }
 
     // Dropdown nav
-    navToggle && navToggle.addEventListener('click', () => siteNav.classList.toggle('expanded'));
+    if (navToggle) {
+        navToggle.addEventListener('click', () => {
+            siteNav.classList.toggle('expanded');
+            navToggle.innerHTML = siteNav.classList.contains('expanded') ? '&#xe07c;' : '&#xe035;';
+        });
+    }
 
     // Manage your account editing
     if (accountSettings) {
@@ -103,7 +108,7 @@
     }
 
     // Bookings
-    if (window.getBookings && activeBookings || pastBookings) {
+    if (window.getBookings) {
         renderBooking = function (booking, active) {
             let {name, contact, checkin, checkout, confirmation, cancelled} = booking;
             let li = document.createElement('li');
@@ -126,10 +131,35 @@
 
         window.getBookings().then(bookings => {
             let active = bookings.active || [];
-            active.map(b => renderBooking(b, true));
             let past = bookings.past || [];
-            if (past.length) { pastBookingsHeader.classList.remove('hidden'); }
-            past.map(b => renderBooking(b, false));
+
+            // Update bookings count in nav
+            if (active.length) {
+                let activeCount = document.querySelectorAll('.bookings-active-count');
+                let notCancelled = active.filter(b => !b.cancelled).length;
+                if (activeCount && notCancelled > 0) {
+                    for (let i = 0; i < activeCount.length; i++) {
+                        activeCount[i].innerHTML = '(' + notCancelled + ')';
+                    }
+                }
+            }
+
+            // Render bookings if we're on the bookings page
+            if (activeBookings || pastBookings) {
+                if (active.filter(b => !b.cancelled).length && !past.length) {
+                    window.location.href = 'view-reservation.html';
+                } else {
+                    active.map(b => renderBooking(b, true));
+                    if (past.length) {
+                        pastBookingsHeader.classList.remove('hidden');
+                        let searchBookingForm = document.getElementById('search-bookings');
+                        if (searchBookingForm) { searchBookingForm.classList.remove('hidden'); }
+                        let bookingFiller = document.querySelector('.bookings-filler');
+                        if (bookingFiller) { bookingFiller.style.top = '82px'; }
+                    }
+                    past.map(b => renderBooking(b, false));
+                }
+            }
         });
     }
 })();

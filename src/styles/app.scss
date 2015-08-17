@@ -77,12 +77,14 @@ button.primary {
 }
 
 #account-nav {
-    background-color: $lightGrey;
+    background-color: $navBackground;
+    color: $navText;
     display: none;
     padding: 0 16px;
     position: absolute;
     top: 42px;
     left: 0;
+    right: 0;
     z-index: 1;
 
     &.expanded {
@@ -94,10 +96,43 @@ button.primary {
     display: none;
 }
 
+#account-nav a {
+    color: $navLinks;
+}
+
 #account-nav ul {
     list-style: none;
+    margin-bottom: 0;
     padding: 0;
     text-align: left;
+}
+
+#account-nav .pos-selector {
+    border-top: 1px solid $navText;
+    display: flex;
+    margin: 2em -1em 0;
+    padding: 0;
+}
+
+#account-nav .pos-selector div {
+    display: inline-block;
+    margin-top: 0;
+    padding: 1em 0;
+    text-align: center;
+    width: 50%;
+}
+
+#account-nav .pos-selector div + div {
+    border-left: 1px solid $navText;
+}
+
+.gb-flag {
+    background-image: url(../images/flags.png);
+    background-position: 0 -520px;
+    background-repeat: no-repeat;
+    display: inline-block;
+    height: 11px;
+    width: 16px;
 }
 
 #banner .username {
@@ -333,7 +368,7 @@ h1 {
 .bookings-filler {
     display: none;
     position: absolute;
-    top: 82px;
+    top: 24px;
     right: 16px;
     width: 320px;
 

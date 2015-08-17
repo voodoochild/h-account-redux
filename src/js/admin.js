@@ -20,7 +20,6 @@
             signInButton.disabled = false;
             signOutButton.disabled = true;
         }
-        console.info(message);
     }
 
     window.signIn = function (reload) {
@@ -72,7 +71,6 @@
                 bookingProfiles.femme.disabled = true;
             }
         }
-        console.info(message);
     }
 
     function switchBookingProfile (profile) {

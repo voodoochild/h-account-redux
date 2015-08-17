@@ -66,3 +66,7 @@ label {
 .error-message {
     @include font-size(14);
 }
+
+#account-nav .pos-selector div {
+    @include font-size(18);
+}
