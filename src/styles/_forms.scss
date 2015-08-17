@@ -26,7 +26,8 @@ textarea {
 }
 
 label + input,
-label + textarea {
+label + textarea,
+.account-settings label + .note {
     margin-top: 1em;
 }
 

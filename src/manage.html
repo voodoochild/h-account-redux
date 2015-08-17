@@ -59,10 +59,14 @@
     			<p data-key="password">*********</p>
     		</div>
         <form class="edit-form hidden">
-          <label for="password" class="hidden">Password</label>
+          <label for="old-password">Old password</label>
+          <input type="password" name="old-password" id="old-password" value="" />
+          <label for="password">New password</label>
           <p class="note">6 to 20 letters, with at least 1 number</p>
-          <input type="password" name="password" id="password" value="p4ssw0rd" />
+          <input type="password" name="password" id="password" value="" />
           <p class="error-message hidden">Invalid password</p>
+          <label for="repeat-password">Repeat new password</label>
+          <input type="password" name="repeat-password" id="repeat-password" value="" />
           <button type="submit" class="primary">Save changes</button>
         </form>
         <a href="#" class="edit-cta">Edit</a>

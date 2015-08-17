@@ -1,6 +1,8 @@
 (function () {
     var navToggle = document.getElementById('nav-toggle');
     var siteNav = document.getElementById('account-nav');
+    var phoneToggle = document.getElementById('phone-toggle');
+    var phoneOverlay = document.getElementById('phone-overlay');
     var accountSettings = document.querySelector('.account-settings');
     var activeBookings = document.getElementById('bookings-active');
     var pastBookings = document.getElementById('bookings-past');
@@ -22,6 +24,13 @@
             siteNav.classList.toggle('expanded');
             navToggle.innerHTML = siteNav.classList.contains('expanded') ? '&#xe07c;' : '&#xe035;';
         });
+    }
+
+    // Phone overlay
+    if (phoneToggle && phoneOverlay) {
+        phoneToggle.addEventListener('mouseover', () => phoneOverlay.classList.remove('hidden'));
+        phoneToggle.addEventListener('mouseout', () => phoneOverlay.classList.add('hidden'));
+        phoneOverlay.addEventListener('mouseout', () => phoneOverlay.classList.add('hidden'));
     }
 
     // Manage your account editing

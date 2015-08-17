@@ -227,6 +227,7 @@ button.primary {
 
     #secondary-nav .right {
         float: right;
+        margin-right: 1em;
     }
 }
 
@@ -452,4 +453,53 @@ h1 {
     #footer-nav {
         display: none;
     }
+}
+
+#phone-overlay {
+    background-color: #fff;
+    border: 2px solid $otherGrey;
+    border-radius: 4px;
+    box-shadow: $otherGrey 0 0 7px 0;
+    color: #7e7e7e;
+    padding: 10px;
+    position: absolute;
+    top: 105px;
+    transition: opacity 0.1s ease-out;
+    right: 14px;
+    z-index: 1;
+}
+
+#phone-overlay:before,
+#phone-overlay:after {
+    content: '';
+    border-color: transparent;
+    border-style: solid;
+    border-width: 16px;
+    height: 0;
+    width: 0;
+    position: absolute;
+    right: 6px;
+}
+
+#phone-overlay:before {
+    border-bottom-color: $otherGrey;
+    top: -33px;
+}
+
+#phone-overlay:after {
+    border-bottom-color: #fff;
+    top: -30px;
+}
+
+#phone-overlay p {
+    margin: 0;
+}
+
+#phone-overlay p + p {
+    margin-top: 1em;
+}
+
+#phone-overlay .number {
+    display: block;
+    margin-bottom: 5px;
 }
