@@ -1,51 +1,68 @@
 <header id="banner" role="banner">
-  <a href="index.html"><img class="logo" src="images/hotels_com_logo_en_GB.png" width="270px" /></a>
-  <a id="nav-toggle" href="#" class="icon">&#xe035;</a>
-  <nav id="account-nav">
-    <ul class="dropdown">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="#">Local deals for tonight</a></li>
-      <li class="member"><span class="profile-username">Jo</span> Smith:</li>
-      <li>
-        <a class="anon" href="find-bookings.html">Your bookings</a>
-        <a class="member bookings-link" href="bookings.html">Your bookings <span class="bookings-active-count"></span></a>
-      </li>
-      <li>
-        <a class="anon" href="rewards-pillar.html">Hotels.com Rewards</a>
-        <a class="member" href="rewards-activity.html">Your Rewards</a>
-      </li>
-      <li class="member"><a href="account.html">Account settings</a></li>
-      <li><a href="help.html">Help</a></li>
-      <li><a href="#">Call customer service</a></li>
-      <li>
-        <a class="anon" href="#" onclick="window.goToSignInPage();">Sign in</a>
-        <a class="member" href="#" onclick="window.signOut(true);">Sign out</a>
-      </li>
-      <li class="pos-selector">
-        <div><span class="gb-flag"></span></div>
-        <div>GBP</div>
-      </li>
-    </ul>
-    <ul class="extended">
-      <li class="avatar-wrap">
-        <img class="anon avatar" src="images/account-icon.png" />
-        <img class="member avatar" src="images/jackson.png" />
-      </li>
-      <li>
-        <a class="anon" href="#" onclick="window.goToSignInPage();">Sign in</a>
-        <a class="member" href="account.html">Account settings</a>
-      </li>
-      <li>
-        <a class="anon" href="rewards-pillar.html">Hotels.com Rewards</a>
-        <a class="member" href="rewards-activity.html">Your Rewards</a>
-      </li>
-      <li><a href="help.html">Help</a></li>
-      <li>
-        <a class="anon" href="find-bookings.html">Your bookings</a>
-        <a class="member bookings-link" href="bookings.html">Your bookings <span class="bookings-active-count"></span></a>
-      </li>
-    </ul>
-  </nav>
-  <img class="anon avatar username" src="images/account-icon.png" />
-  <img class="member avatar username" src="images/jackson.png" />
+  <div class="fullwidth-inner">
+    <a href="index.html"><img class="logo" src="images/hotels_com_logo_en_GB.png" width="270px" /></a>
+    <a id="nav-toggle" href="#" class="icon">&#xe035;</a>
+    <nav id="account-nav">
+      <ul class="dropdown">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#">Local deals for tonight</a></li>
+        <li class="member"><span class="profile-username">Jo</span> Smith:</li>
+        <li>
+          <a class="anon" href="find-bookings.html">Your bookings</a>
+          <a class="member bookings-link" href="bookings.html">Your bookings <span class="bookings-active-count"></span></a>
+        </li>
+        <li>
+          <a class="anon" href="rewards-pillar.html">Hotels.com Rewards</a>
+          <a class="member" href="rewards-activity.html">Your Rewards</a>
+        </li>
+        <li class="member"><a href="account.html">Account settings</a></li>
+        <li><a href="help.html">Help</a></li>
+        <li><a href="#">Call customer service</a></li>
+        <li>
+          <a class="anon" href="#" onclick="window.goToSignInPage();">Sign in</a>
+          <a class="member" href="#" onclick="window.signOut(true);">Sign out</a>
+        </li>
+        <li class="pos-selector">
+          <div><span class="gb-flag"></span></div>
+          <div>GBP</div>
+        </li>
+      </ul>
+      <ul class="extended">
+        <li class="avatar-wrap">
+          <img class="anon avatar" src="images/account-icon.png" />
+          <img class="member avatar" src="images/jackson.png" />
+        </li>
+        <li>
+          <a class="anon" href="#" onclick="window.goToSignInPage();">Sign in</a>
+          <a class="member" href="account.html">Account settings</a>
+        </li>
+        <li>
+          <a class="anon" href="rewards-pillar.html">Hotels.com Rewards</a>
+          <a class="member" href="rewards-activity.html">Your Rewards</a>
+        </li>
+        <li><a href="help.html">Help</a></li>
+        <li>
+          <a class="anon" href="find-bookings.html">Your bookings</a>
+          <a class="member bookings-link" href="bookings.html">Your bookings <span class="bookings-active-count"></span></a>
+        </li>
+      </ul>
+    </nav>
+    <img class="anon avatar username" src="images/account-icon.png" />
+    <img class="member avatar username" src="images/Jo.png" />
+  </div>
 </header>
+<div id="secondary-nav">
+  <ul class="fullwidth-inner">
+    <li><a href="index.html">Home</a></li>
+    <li>Hotel deals</li>
+    <li>Travel guide</li>
+    <li>Cookie policy</li>
+    <li id="phone-toggle" class="right icon">
+      Book online or call &#xe60c;
+      <div id="phone-overlay" class="hidden">
+        <p><strong class="number">0800 028 3906</strong>FREE from a landline 24 hours a day, 7 days a week</p>
+        <p><span class="number">020 3024 8216</span>At standard rates 24 hours a day, 7 days a week</p>
+      </div>
+    </li>
+  </ul>
+</div>

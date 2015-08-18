@@ -27,7 +27,6 @@
         updateSignedInStatus();
         if (reload === true) {
             if (window.next) {
-                console.log(window.next);
                 window.location.href = window.next;
             } else {
                 document.location.reload();
