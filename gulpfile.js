@@ -46,7 +46,8 @@ function buildCSS () {
 
 function buildJS () {
     var jsFiles = [
-        // './bower_components/velocity/velocity.min.js',
+        './bower_components/zepto/zepto.min.js',
+        './bower_components/velocity/velocity.min.js',
         './src/js/bookings-data.js',  // needs to be loaded before app.js
         './src/js/**/*.js'
     ];

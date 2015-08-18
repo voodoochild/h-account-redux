@@ -25,13 +25,34 @@
     window.signIn = function (reload) {
         localStorage.setItem('signedin', true);
         updateSignedInStatus();
-        if (reload === true) { document.location.reload(); }
+        if (reload === true) {
+            if (window.next) {
+                window.location.href = window.next;
+            } else {
+                document.location.reload();
+            }
+        }
     };
 
     window.signOut = function (reload) {
         localStorage.removeItem('signedin');
         updateSignedInStatus();
-        if (reload === true) { document.location.reload(); }
+        if (reload === true) {
+            switch (window.location.pathname) {
+                case '/index.html':
+                case '/manage.html':
+                case '/cards.html':
+                case '/comms.html':
+                    window.location.href = '/home.html';
+                    break;
+                default:
+                    document.location.reload();
+            }
+        }
+    };
+
+    window.goToSignInPage = function () {
+        window.location.href = '/signin.html?go=' + window.location.pathname;
     };
 
     if (signInButton && signOutButton) {
@@ -44,44 +65,44 @@
     // Booking profile
     var bookingProfileStatus = document.getElementById('booking-profile-status');
     var bookingProfiles = {
-        eli: document.getElementById('admin-profile-eli'),
-        ichi: document.getElementById('admin-profile-ichi'),
-        femme: document.getElementById('admin-profile-femme')
+        jo: document.getElementById('admin-profile-jo'),
+        robin: document.getElementById('admin-profile-robin'),
+        sam: document.getElementById('admin-profile-sam')
     };
 
     function updateBookingProfileStatus () {
-        let profile = localStorage.getItem('profile') || 'Eli';
+        let profile = localStorage.getItem('profile') || 'Jo';
         let message = `Using booking profile '${profile}'`;
         if (bookingProfileStatus) {
             bookingProfileStatus.innerHTML = message;
             bookingProfileStatus.classList.remove('hidden');
         }
-        if (bookingProfiles.eli && bookingProfiles.ichi && bookingProfiles.femme) {
-            if (profile === 'Eli') {
-                bookingProfiles.eli.disabled = true;
-                bookingProfiles.ichi.disabled = false;
-                bookingProfiles.femme.disabled = false;
-            } else if (profile === 'Ichi') {
-                bookingProfiles.eli.disabled = false;
-                bookingProfiles.ichi.disabled = true;
-                bookingProfiles.femme.disabled = false;
-            } else if (profile === 'Femme') {
-                bookingProfiles.eli.disabled = false;
-                bookingProfiles.ichi.disabled = false;
-                bookingProfiles.femme.disabled = true;
+        if (bookingProfiles.jo && bookingProfiles.robin && bookingProfiles.sam) {
+            if (profile === 'Jo') {
+                bookingProfiles.jo.disabled = true;
+                bookingProfiles.robin.disabled = false;
+                bookingProfiles.sam.disabled = false;
+            } else if (profile === 'Robin') {
+                bookingProfiles.jo.disabled = false;
+                bookingProfiles.robin.disabled = true;
+                bookingProfiles.sam.disabled = false;
+            } else if (profile === 'Sam') {
+                bookingProfiles.jo.disabled = false;
+                bookingProfiles.robin.disabled = false;
+                bookingProfiles.sam.disabled = true;
             }
         }
     }
 
     function switchBookingProfile (profile) {
-        localStorage.setItem('profile', profile || 'Eli');
+        localStorage.setItem('profile', profile || 'Jo');
         updateBookingProfileStatus();
     }
 
-    if (bookingProfiles.eli && bookingProfiles.ichi && bookingProfiles.femme) {
-        bookingProfiles.eli.addEventListener('click', () => switchBookingProfile('Eli'));
-        bookingProfiles.ichi.addEventListener('click', () => switchBookingProfile('Ichi'));
-        bookingProfiles.femme.addEventListener('click', () => switchBookingProfile('Femme'));
+    if (bookingProfiles.jo && bookingProfiles.robin && bookingProfiles.sam) {
+        bookingProfiles.jo.addEventListener('click', () => switchBookingProfile('Jo'));
+        bookingProfiles.robin.addEventListener('click', () => switchBookingProfile('Robin'));
+        bookingProfiles.sam.addEventListener('click', () => switchBookingProfile('Sam'));
     }
 
     updateBookingProfileStatus();

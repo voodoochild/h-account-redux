@@ -1,6 +1,6 @@
 (function () {
     var profiles = {
-        Eli: {
+        Jo: {
             active: [
                 {
                     name: 'Patio Hotel and Urban Resort',
@@ -36,7 +36,7 @@
             ]
         },
 
-        Ichi: {
+        Robin: {
             active: [
                 {
                     name: 'Patio Hotel and Urban Resort',
@@ -114,7 +114,7 @@
             ]
         },
 
-        Femme: {
+        Sam: {
             active: [
                 {
                     name: 'Patio Hotel and Urban Resort',

@@ -29,15 +29,16 @@ a {
     text-decoration: none;
 }
 
-button {
+button, .btn {
     background-color: transparent;
     border: 1px solid $cerulean;
     border-radius: 6px;
     color: $cerulean;
+    display: inline-block;
     padding: .5em;
 }
 
-button.primary {
+button.primary, .btn.primary {
     background-color: $cerulean;
     color: $offWhite;
 }
@@ -48,10 +49,22 @@ button.primary {
     display: none !important;
 }
 
+main,
+footer,
+#account-nav,
+#banner .avatar {
+    transition: opacity .1s ease-out;
+}
+
+.limbo main,
+.limbo footer,
+.limbo #account-nav,
+.limbo #banner .avatar {
+    opacity: 0;
+}
+
 #banner {
-    background: linear-gradient(to bottom, $banner-gradient-top 0, $banner-gradient-bottom 100%);
-    border-top: 1px solid $banner-gradient-bottom;
-    border-bottom: 1px solid $banner-border-bottom;
+    background-color: #d41200;
     margin-top: 0;
     min-height: 58px;
     position: relative;
@@ -208,13 +221,13 @@ button.primary {
     #secondary-nav {
         background-color: $lightGrey;
         display: block;
-        margin-top: -16px;
+        // margin-top: -16px;
     }
 
     #secondary-nav ul {
         list-style: none;
         margin: 0;
-        padding: 16px;
+        padding: 0 16px 16px;
     }
 
     #secondary-nav li {
@@ -244,13 +257,17 @@ h1 {
 }
 
 .avatar {
-    background-color: $offWhite;
-    border: 1px solid $avatar-border;
+    background-color: #6b6b6b;
+    border: 2px solid $offWhite;
     border-radius: 50%;
     height: 2em;
     margin-left: 16px;
     position: absolute;
-    top: .5em;
+    top: -.5em;
+}
+
+.avatar.anon {
+    background-color: #fff;
 }
 
 .page-nav {
@@ -502,4 +519,12 @@ h1 {
 #phone-overlay .number {
     display: block;
     margin-bottom: 5px;
+}
+
+#feedback-form {
+    margin-top: 0;
+}
+
+#feedback-form textarea + button {
+    margin-top: 1em;
 }

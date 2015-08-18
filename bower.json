@@ -2,6 +2,7 @@
   "name": "h-account-redux",
   "devDependencies": {
     "normalize-scss": "~3.0.3",
-    "velocity": "~1.2.2"
+    "velocity": "~1.2.2",
+    "zepto": "~1.1.6"
   }
 }

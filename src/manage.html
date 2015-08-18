@@ -3,19 +3,20 @@
   <main>
     @@include("_secondary-nav.html")
     <h1>Manage your account</h1>
-    <ul class="account-settings">
+    <p class="content-wrap anon">This page is only available to signed in users. Click <a href="#" onclick="window.goToSignInPage();">here</a> to sign in.</p>
+    <ul class="account-settings member">
     	<li>
     		<h2>Your details</h2>
     		<div class="summary">
-    			<p><span data-key="name">Jackson</span> <span data-key="surname">Howard</span></p>
+    			<p><span data-key="name" class="profile-username">Jo</span> <span data-key="surname">Smith</span></p>
     			<p data-key="address">1 Rodeo Drive, Beverley Hills, California, 90210, USA</p>
     			<p data-key="telephone">+1 310-275-5575</p>
     		</div>
         <form class="edit-form hidden">
           <label for="name">Name</label>
-          <input type="text" name="name" id="name" value="Jackson" />
+          <input class="profile-username-input" type="text" name="name" id="name" value="Jo" />
           <label for="surname">Last name</label>
-          <input type="text" name="surname" id="surname" value="Howard" />
+          <input type="text" name="surname" id="surname" value="Smith" />
           <label for="address-line-1">Address line 1</label>
           <input type="text" name="address-line-1" id="address-line-1" value="1 Rodeo Drive" />
           <label for="address-line-2">Address line 2</label>
@@ -43,11 +44,11 @@
     	<li>
     		<h2>Email address</h2>
     		<div class="summary">
-    			<p data-key="email">jacksonhoward@nbn.corp</p>
+    			<p data-key="email">smith@hotels.com</p>
     		</div>
         <form class="edit-form hidden">
           <label for="email" class="hidden">Email address</label>
-          <input type="text" name="email" id="email" value="jacksonhoward@nbn.corp" />
+          <input type="text" name="email" id="email" value="smith@hotels.com" />
           <p class="error-message hidden">Invalid email address</p>
           <button type="submit" class="primary">Save changes</button>
         </form>
@@ -83,23 +84,22 @@
         <a href="#" class="edit-cta">Edit</a>
     	</li>
     	<li>
-    		<h2>Facebook settings</h2>
+    		<h2>Social preferences</h2>
     		<div class="summary">
     			<p data-key="facebook">Connected</p>
     		</div>
         <form class="edit-form hidden">
-          <p>Something something Facebook sign in</p>
           <input type="hidden" name="facebook" id="facebook" value="Not connected" />
           <button type="submit" class="primary">Disconnect from Facebook</button>
         </form>
         <a href="#" class="edit-cta">Edit</a>
     	</li>
     	<li>
-    		<h2>Want to delete this account?</h2>
-    		<a href="#" class="edit-cta">Delete your account here</a>
+    		<h2>Delete your account</h2>
+    		<a href="#" class="edit-cta">Delete account</a>
         <form class="edit-form hidden" action="deleted.html">
-          <p>Stay now! Baby if you've got to go away, don't think I can take the pain, won't you stay another day? STAY NOW.</p>
-          <button type="submit" class="primary">Delete it. I'm outta here!</button>
+          <p>Are you sure? All your information will be permanently erased and we won't be able to restore it.</p>
+          <button type="submit" class="primary">Delete account</button>
         </form>
     	</li>
     </ul>

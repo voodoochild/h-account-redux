@@ -1,4 +1,7 @@
 (function () {
+    var V = window.Velocity || function () {};
+
+    // ALL THE ELEMENTS
     var navToggle = document.getElementById('nav-toggle');
     var siteNav = document.getElementById('account-nav');
     var phoneToggle = document.getElementById('phone-toggle');
@@ -7,15 +10,36 @@
     var activeBookings = document.getElementById('bookings-active');
     var pastBookings = document.getElementById('bookings-past');
     var pastBookingsHeader = document.getElementById('past-bookings-heading');
+    var noConfNumber = document.getElementById('no-conf-number');
+    var paymentCardForm = document.getElementById('payment-card-form');
+    var findBookingForm = document.getElementById('find-booking-form');
+    var feedback = document.getElementById('feedback');
+    var feedbackThanks = document.getElementById('feedback-thanks');
+    var feedbackForm = document.getElementById('feedback-form');
+
     var openEditForm, closeEditForm, validateEditForm, updateSummary, renderBooking;
 
-    // Sign in/out
+    // Set page signed in/out status
     if (localStorage.getItem('signedin')) {
+        let profile = localStorage.getItem('profile');
+        if (profile) {
+            $('.profile-username').text(profile);
+            $('.profile-username-input').val(profile);
+            $('.avatar').attr('src', `images/${profile}.png`);
+        }
         document.body.classList.add('signed-in');
         document.body.classList.remove('signed-out');
+        document.body.classList.remove('limbo');
     } else {
         document.body.classList.remove('signed-in');
         document.body.classList.add('signed-out');
+        document.body.classList.remove('limbo');
+    }
+
+    // Handle sign in page querystring
+    if (window.location.pathname === '/signin.html') {
+        let matches = window.location.search.match(/go=\/([a-z\-]+\.html)/i);
+        if (matches) { window.next = matches[1]; }
     }
 
     // Dropdown nav
@@ -168,6 +192,33 @@
                     }
                     past.map(b => renderBooking(b, false));
                 }
+            }
+        });
+    }
+
+    // Find booking form
+    if (noConfNumber && paymentCardForm && findBookingForm) {
+        noConfNumber.addEventListener('click', e => {
+            e.preventDefault();
+            noConfNumber.classList.add('hidden');
+            paymentCardForm.classList.remove('hidden');
+            findBookingForm.action = 'bookings.html';
+        });
+    }
+
+    // Footer feedback form
+    if (feedback && feedbackThanks && feedbackForm) {
+        feedback.addEventListener('click', e => {
+            let target = e.target;
+            if (target.nodeName === 'BUTTON') {
+                if (target.classList.contains('feedback-yes')) {
+                    feedbackForm.classList.add('hidden');
+                    feedbackThanks.classList.remove('hidden');
+                } else if (target.classList.contains('feedback-no')) {
+                    feedbackForm.classList.remove('hidden');
+                    feedbackThanks.classList.add('hidden');
+                }
+                $('.feedback-hideme').remove();
             }
         });
     }
