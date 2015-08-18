@@ -37,14 +37,16 @@
     }
 
     // Handle sign in page querystring
-    if (window.location.pathname === '/signin.html') {
-        let matches = window.location.search.match(/go=\/([a-z\-]+\.html)/i);
-        if (matches) { window.next = matches[1]; }
+    let parts = window.location.pathname.split('/');
+    if (parts[parts.length - 1] === 'signin.html') {
+        let matches = window.location.search.match(/go=([a-z\-]+\.html)/i);
+        window.next = matches ? matches[1] : 'index.html';
     }
 
     // Dropdown nav
     if (navToggle) {
-        navToggle.addEventListener('click', () => {
+        navToggle.addEventListener('click', e => {
+            e.preventDefault();
             siteNav.classList.toggle('expanded');
             navToggle.innerHTML = siteNav.classList.contains('expanded') ? '&#xe07c;' : '&#xe035;';
         });
@@ -172,25 +174,36 @@
                 let notCancelled = active.filter(b => !b.cancelled).length;
                 if (activeCount && notCancelled > 0) {
                     for (let i = 0; i < activeCount.length; i++) {
-                        activeCount[i].innerHTML = '(' + notCancelled + ')';
+                        activeCount[i].innerHTML = `(${notCancelled})`;
                     }
+                    let upcomingCount = document.querySelector('.bookings-upcoming-count');
+                    if (upcomingCount) { upcomingCount.innerHTML = `(${notCancelled} upcoming)`; }
+                }
+                if (active.length === 1 && !past.length) {
+                    $('.bookings-link').attr('href', 'view-reservation.html');
+                    $('.bookings-form-action').attr('action', 'view-reservation.html');
                 }
             }
 
             // Render bookings if we're on the bookings page
             if (activeBookings || pastBookings) {
-                if (active.filter(b => !b.cancelled).length && !past.length) {
+                if (active.length === 1 && !past.length) {
                     window.location.href = 'view-reservation.html';
                 } else {
                     active.map(b => renderBooking(b, true));
                     if (past.length) {
                         pastBookingsHeader.classList.remove('hidden');
-                        let searchBookingForm = document.getElementById('search-bookings');
-                        if (searchBookingForm) { searchBookingForm.classList.remove('hidden'); }
-                        let bookingFiller = document.querySelector('.bookings-filler');
-                        if (bookingFiller) { bookingFiller.style.top = '82px'; }
+                        past.map(b => renderBooking(b, false));
+
+                        if (past.length > 2) {
+                            let searchBookingForm = document.getElementById('search-bookings');
+                            let bookingFiller = document.querySelector('.bookings-filler');
+                            let pagination = document.getElementById('bookings-pagination');
+                            if (searchBookingForm) { searchBookingForm.classList.remove('hidden'); }
+                            if (bookingFiller) { bookingFiller.style.top = '82px'; }
+                            if (pagination) { pagination.classList.remove('hidden'); }
+                        }
                     }
-                    past.map(b => renderBooking(b, false));
                 }
             }
         });

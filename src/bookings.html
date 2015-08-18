@@ -2,7 +2,7 @@
   @@include("_banner.html")
   <main>
     @@include("_secondary-nav.html")
-    <h1>Your bookings (1 upcoming)</h1>
+    <h1>Your bookings <span class="bookings-upcoming-count"></span></h1>
     <div class="content-wrap bookings-content">
       <p>Can’t see your booking below? <a href="find-bookings.html">Find a booking</a> using your confirmation number or payment card number</p>
       <div id="search-bookings" class="hidden">
@@ -13,6 +13,7 @@
       <h2 id="past-bookings-heading" class="hidden">Past bookings</h2>
       <ol id="bookings-past" class="bookings"></ol>
       <img class="bookings-filler" src="images/filler.png" />
+      <p id="bookings-pagination" class="hidden">Page <a href="#">1</a>, <a href="#">2</a>, <a href="#">3</a></p>
     </div>
   </main>
   @@include("_footer.html")

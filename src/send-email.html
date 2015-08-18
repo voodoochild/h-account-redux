@@ -1,0 +1,20 @@
+@@include("_head.html", { "title": "Send an email of your bookings" })
+  @@include("_banner.html")
+  <main>
+    @@include("_secondary-nav.html")
+    <h1>Send an email of your bookings</h1>
+    <div class="content-wrap">
+      <p>We can send you an email listing the last X bookings you made, with direct access
+        to your bookings and a list of confirmation numbers.</p>
+      <label for="email">Email address</label>
+      <p class="note">This is the email you used when making the booking</p>
+      <input type="text" name="email" id="email" />
+      <form action="email-sent.html">
+        <button type="submit" class="primary">Email bookings</button>
+      </form>
+    </div>
+  </main>
+  @@include("_footer.html")
+  <script src="js/bundle.js"></script>
+</body>
+</html>

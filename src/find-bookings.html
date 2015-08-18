@@ -20,29 +20,30 @@
   				</div>
   				<p><a href="#">Forgotten your password?</a></p>
   				<div class="field">
-  					<a href="#" class="btn primary" onclick="window.goToSignInPage();">Sign in</a>
+  					<a href="" class="btn primary" onclick="window.goToBookingsPage();return false;">Sign in</a>
   				</div>
   			</div>
   			<div class="facebook-signin">
   				<h2>Sign in using Facebook</h2>
-  				<a href="#" class="btn primary" onclick="window.goToSignInPage();">Sign in using Facebook</a>
+  				<a href="" class="btn primary" onclick="window.goToBookingsPage();return false;">Sign in using Facebook</a>
   			</div>
   		</div>
       <div class="formgroup">
   			<h2 class="anon">Find a booking using your booking details</h2>
   			<div class="field">
   				<label for="last-name">Last name of billing name</label>
-  					<p class="note">This is the name of the payment card holder, or guest name if you didn’t book using a credit or debit card </p>
+					<p class="note">This is the name of the payment card holder, or guest name if you didn’t book using a credit or debit card </p>
   				<input type="text" id="last-name" name="last-name">
   			</div>
   			<div class="field">
   				<label for="conf-number">Confirmation number</label>
-  					<p class="note">Hotels.com confirmation or itinery number which was emailed to you</p>
+					<p class="note">Hotels.com confirmation or itinery number which was emailed to you</p>
   				<input type="text" id="conf-number" name="conf-number" />
   			</div>
         <p><a id="no-conf-number" href="#">Don't know your confirmation number?</a></p>
         <div id="payment-card-form" class="field hidden">
-          <label for="payment-card-number">Payment card number <span class="icon">&#xe019;</span></label>
+          <label for="payment-card-number">Payment card number</label>
+          <p class="note">Credit or debit card number used to make the booking <span class="icon">&#xe019;</span></p>
           <input type="text" id="payment-card-number" name="payment-card-number" />
         </div>
   			<div class="field">
@@ -50,7 +51,8 @@
     				<button type="submit" class="button primary">Find booking</button>
           </form>
   			</div>
-  			<p>If you don’t have these details to hand, we can <a href="#">send you an email which lists of all your bookings</a></p>
+  			<p>If you don’t have these details to hand, we can <a href="send-email.html">send you an email which lists of all your bookings</a></p>
+        <p>Did you book a flight + hotel package? <a href="#">Find your itinerary here</a></p>
   		</div>
     </div>
   </main>

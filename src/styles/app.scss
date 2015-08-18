@@ -292,9 +292,13 @@ h1 {
     margin-right: 20px;
     padding: 16px;
 
-    @include from-breakpoint(mediumlarge) {
+    @include from-breakpoint(large) {
         color: $cerulean;
     }
+}
+
+.page-nav a + a {
+    margin-top: 0;
 }
 
 .page-nav .about {
@@ -302,7 +306,7 @@ h1 {
     display: none;
     margin-left: 1em;
 
-    @include from-breakpoint(mediumlarge) {
+    @include from-breakpoint(large) {
         display: inline-block;
     }
 }

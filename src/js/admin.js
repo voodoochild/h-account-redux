@@ -27,6 +27,7 @@
         updateSignedInStatus();
         if (reload === true) {
             if (window.next) {
+                console.log(window.next);
                 window.location.href = window.next;
             } else {
                 document.location.reload();
@@ -38,12 +39,15 @@
         localStorage.removeItem('signedin');
         updateSignedInStatus();
         if (reload === true) {
-            switch (window.location.pathname) {
-                case '/index.html':
-                case '/manage.html':
-                case '/cards.html':
-                case '/comms.html':
-                    window.location.href = '/home.html';
+            let parts = window.location.pathname.split('/');
+            switch (parts[parts.length - 1]) {
+                case 'account.html':
+                case 'manage.html':
+                case 'cards.html':
+                case 'comms.html':
+                case 'send-email.html':
+                case 'email-sent.html':
+                    window.location.href = 'index.html';
                     break;
                 default:
                     document.location.reload();
@@ -52,7 +56,21 @@
     };
 
     window.goToSignInPage = function () {
-        window.location.href = '/signin.html?go=' + window.location.pathname;
+        let parts = window.location.pathname.split('/');
+        window.location.href = 'signin.html?go=' + parts[parts.length - 1];
+    };
+
+    window.goToBookingsPage = function () {
+        window.getBookings().then(bookings => {
+            let active = bookings.active || [];
+            let past = bookings.past || [];
+            if (active.length === 1 && !past.length) {
+                window.next = 'view-reservation.html';
+            } else {
+                window.next = 'bookings.html';
+            }
+            window.signIn(true);
+        });
     };
 
     if (signInButton && signOutButton) {
