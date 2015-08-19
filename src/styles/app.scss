@@ -78,7 +78,7 @@ footer,
     position: relative;
     text-align: center;
 
-    @include from-breakpoint(mediumlarge) {
+    @include from-breakpoint(medium) {
         text-align: left;
     }
 }
@@ -92,7 +92,7 @@ footer,
     height: 40px;
     width: 40px;
     @include font-size(20, 40);
-    @include from-breakpoint(mediumlarge) {
+    @include from-breakpoint(medium) {
         display: none;
     }
 }
@@ -174,7 +174,7 @@ footer,
     margin: 0;
 }
 
-@include from-breakpoint(mediumlarge) {
+@include from-breakpoint(medium) {
     #account-nav {
         background-color: transparent;
         display: block;
@@ -216,7 +216,7 @@ footer,
 #banner .logo {
     margin-top: -62px;
 
-    @include from-breakpoint(medium) {
+    @include from-breakpoint(small) {
         margin-left: -42px;
     }
 }
@@ -225,7 +225,7 @@ footer,
     display: none;
 }
 
-@include from-breakpoint(mediumlarge) {
+@include from-breakpoint(medium) {
     #secondary-nav {
         background-color: #262626;
         color: $offWhite;
@@ -260,6 +260,10 @@ footer,
 main {
     background-color: $offWhite;
     margin-top: 0;
+}
+
+main.nonwhite {
+    background-color: $lightGrey;
 }
 
 h1 {
@@ -305,7 +309,7 @@ h1 {
     margin-right: 20px;
     padding: 16px;
 
-    @include from-breakpoint(large) {
+    @include from-breakpoint(mediumlarge) {
         color: $cerulean;
     }
 }
@@ -319,7 +323,7 @@ h1 {
     display: none;
     margin-left: 1em;
 
-    @include from-breakpoint(large) {
+    @include from-breakpoint(mediumlarge) {
         display: inline-block;
     }
 }
@@ -366,27 +370,104 @@ h1 {
     list-style: none;
     padding: 0;
 
-    @include from-breakpoint(large) {
+    @include from-breakpoint(xlarge) {
         margin-right: 336px;
     }
 }
 
 .booking {
-    border: 1px solid $warmGrey;
+    border: 1px solid $footer-separator;
+    background-color: white;
     color: $greyishBrown;
 }
 
-.booking h3 {
+.booking-row {
+    display: block;
     margin-top: 0;
+    padding: 10px;
+}
+
+.booking-row + .booking-row {
+    border-top: 1px solid $footer-separator;
+}
+
+.booking-thumbnail {
+    display: block;
+    height: 170px;
+    width: 100%;
+}
+
+.booking h3 {
+    margin: 0 30px 0 0;
 }
 
 .booking a {
-    display: block;
-    padding: 16px;
+    background-image: url(../images/arrow.png);
+    background-position: right 16px center;
+    background-repeat: no-repeat;
+    background-size: 11px 18px;
 }
 
-.booking.cancelled {
-    background-color: $lightGrey;
+.booking-contact {
+    color: $warmGrey;
+}
+
+.booking-confirmation {
+    color: #777;
+}
+
+.booking-date-wrap {
+    margin: 0;
+}
+
+.booking-date-wrap + .booking-date-wrap {
+    margin-top: 10px;
+}
+
+.booking-date {
+    color: $warmGrey;
+    display: block;
+    margin-bottom: 6px;
+}
+
+@include from-breakpoint(medium) {
+    .booking {
+        height: 172px;
+        position: relative;
+    }
+
+    .booking-thumbnail {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: auto;
+    }
+
+    .booking-row {
+        margin-left: 255px;
+    }
+
+    .booking-row + .booking-row {
+        border-top: 0;
+    }
+
+    .booking-row:nth-child(2) {
+        border-bottom: 1px solid $footer-separator;
+    }
+
+    .booking-date-wrap {
+        display: inline-block;
+    }
+
+    .booking-date-wrap + .booking-date-wrap {
+        margin-top: 0;
+        margin-left: 3em;
+    }
+}
+
+#past-bookings-heading {
+    color: #777;
+    margin-top: 3em;
 }
 
 .note {
@@ -408,7 +489,7 @@ h1 {
     right: 16px;
     width: 320px;
 
-    @include from-breakpoint(large) {
+    @include from-breakpoint(xlarge) {
         display: block;
     }
 }
@@ -419,7 +500,7 @@ h1 {
     padding-top: 1em;
 }
 
-@include from-breakpoint(mediumlarge) {
+@include from-breakpoint(medium) {
     .flex-forms {
         display: flex;
         flex-wrap: nowrap;
@@ -484,7 +565,7 @@ h1 {
     width: 100%;
 }
 
-@include from-breakpoint(mediumlarge) {
+@include from-breakpoint(medium) {
     #footer-nav {
         display: none;
     }
@@ -557,7 +638,7 @@ h1 {
     display: none;
 }
 
-@include from-breakpoint(medium) {
+@include from-breakpoint(small) {
     .small-dummy-content {
         display: none;
     }

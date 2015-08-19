@@ -148,15 +148,23 @@
             let li = document.createElement('li');
             let href = active ? 'view-reservation' : 'view-past-reservation';
             li.classList.add('booking');
-            if (cancelled) { name += ' (cancelled)'; }
+            if (cancelled) {
+                li.classList.add('cancelled');
+                name += ' (cancelled)';
+            }
             li.innerHTML = `
-                <a href="${href}.html">
+                <img class="booking-thumbnail" src="http://exp.cdn-hotels.com/hotels/7000000/6440000/6432100/6432067/6432067_91_z.jpg" />
+                <a class="booking-row" href="${href}.html">
                     <h3>${name}</h3>
-                    <div class="contact">${contact}</div>
-                    <div class="check-in">Check in: ${checkin}</div>
-                    <div class="check-out">	Check out: ${checkout}</div>
-                    <div class="confirmation">Confirmation number: ${confirmation}</div>
-                </a>`;
+                    <span class="booking-contact">${contact}</span>
+                </a>
+                <div class="booking-row">
+                    <div class="booking-date-wrap"><span class="booking-date">Check in</span> ${checkin}</div>
+                    <div class="booking-date-wrap"><span class="booking-date">Check out</span> ${checkout}</div>
+                </div>
+                <div class="booking-row booking-confirmation">
+                    Confirmation number: ${confirmation}
+                </div>`;
             if (active) {
                 activeBookings.appendChild(li);
             } else {

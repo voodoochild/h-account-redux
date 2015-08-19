@@ -39,7 +39,7 @@ label {
     overflow: hidden;
 }
 
-@include from-breakpoint(mediumlarge) {
+@include from-breakpoint(medium) {
     #account-nav,
     #secondary-nav,
     .page-nav .about {
@@ -77,4 +77,25 @@ label {
 
 .number {
     @include font-size(14);
+}
+
+.booking h3 {
+    @include font-size(20);
+    font-weight: 400;
+}
+
+.booking-date {
+    @include font-size(12);
+    text-transform: uppercase;
+}
+
+.booking-contact,
+.booking-confirmation {
+    @include font-size(14);
+}
+
+#past-bookings-heading {
+    @include font-size(14);
+    font-weight: 400;
+    text-transform: uppercase;
 }

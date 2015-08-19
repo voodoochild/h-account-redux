@@ -1,17 +1,20 @@
 // _mixins.scss
 
 @mixin from-breakpoint($point) {
-    @if $point == 'medium' {
+    @if $point == 'small' {
         @media (min-width: 600 / 16 * 1em) { @content; }
     }
-    @else if $point == 'mediumlarge' {
+    @else if $point == 'medium' {
         @media (min-width: 750 / 16 * 1em) { @content; }
     }
-    @else if $point == 'large' {
+    @else if $point == 'mediumlarge' {
         @media (min-width: 850 / 16 * 1em) { @content; }
     }
-    @else if $point == 'xlarge' {
+    @else if $point == 'large' {
         @media (min-width: 960 / 16 * 1em) { @content; }
+    }
+    @else if $point == 'xlarge' {
+        @media (min-width: 1160 / 16 * 1em) { @content; }
     }
 }
 
