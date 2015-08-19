@@ -248,12 +248,16 @@ footer,
     }
 
     #secondary-nav li + li {
-        margin-left: .5em;
+        margin-left: 1em;
     }
 
     #secondary-nav .right {
         float: right;
-        // margin-right: 1em;
+        margin-left: 0;
+    }
+
+    #secondary-nav .right + .right {
+        margin-right: 1em;
     }
 }
 
@@ -571,6 +575,18 @@ h1 {
     }
 }
 
+#phone-toggle {
+    cursor: help;
+    padding-right: 20px;
+    position: relative;
+}
+
+#phone-toggle .icon {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
 #phone-overlay {
     background-color: #fff;
     border: 2px solid $otherGrey;
@@ -579,9 +595,10 @@ h1 {
     color: #7e7e7e;
     padding: 10px;
     position: absolute;
-    top: 47px;
+    top: 20px;
     transition: opacity 0.1s ease-out;
-    right: 0;
+    right: -17px;
+    width: 310px;
     z-index: 1;
 }
 
@@ -650,4 +667,15 @@ h1 {
 #payment-card-form,
 #email-sent {
     display: none;
+}
+
+#phone-toggle {
+    padding-right: 20px;
+    position: relative;
+}
+
+#phone-toggle .icon {
+    position: absolute;
+    top: 0;
+    right: 0;
 }
