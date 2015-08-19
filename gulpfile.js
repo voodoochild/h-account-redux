@@ -1,6 +1,7 @@
 var gulp = require('gulp');
 var concat = require('gulp-concat');
 var sass = require('gulp-sass');
+var autoprefixer = require('gulp-autoprefixer');
 var babel = require('gulp-babel');
 var uglify = require('gulp-uglify');
 var fileinclude = require('gulp-file-include');
@@ -46,6 +47,7 @@ function buildCSS () {
     gulp.src('./src/styles/**/*.scss')
         .pipe(sourcemaps.init())
         .pipe(sass({ outputStyle: 'compressed' })).on('error', sass.logError)
+        .pipe(autoprefixer())
         .pipe(gulp.dest('./dist/styles'))
         .pipe(sourcemaps.write())
         .pipe(reload({ stream: true }));

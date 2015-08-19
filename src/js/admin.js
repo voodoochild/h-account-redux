@@ -39,13 +39,15 @@
         updateSignedInStatus();
         if (reload === true) {
             let parts = window.location.pathname.split('/');
+            console.log(parts);
             switch (parts[parts.length - 1]) {
                 case 'account.html':
                 case 'manage.html':
-                case 'cards.html':
+                case 'payment-cards.html':
                 case 'comms.html':
                 case 'send-email.html':
                 case 'email-sent.html':
+                case 'rewards-activity.html':
                     window.location.href = 'index.html';
                     break;
                 default:
