@@ -3,14 +3,19 @@
   <main>
     <h1>Send an email of your bookings</h1>
     <div class="content-wrap">
-      <p>We can send you an email listing the last X bookings you made, with direct access
-        to your bookings and a list of confirmation numbers.</p>
-      <label for="email">Email address</label>
-      <p class="note">This is the email you used when making the booking</p>
-      <input type="text" name="email" id="email" />
-      <form action="email-sent.html">
-        <button type="submit" class="primary">Email bookings</button>
-      </form>
+      <div id="send-email">
+        <p>We can send you an email listing the last X bookings you made, with direct access
+          to your bookings and a list of confirmation numbers.</p>
+        <label for="email">Email address</label>
+        <p class="note">This is the email you used when making the booking</p>
+        <input type="text" name="email" id="email" /><br>
+        <p><button class="send-email-toggle primary">Email bookings</button></p>
+      </div>
+      <div id="email-sent">
+        <p><span class="icon">&#xe60f;</span> We sent an email to smith@example.com containing all bookings we found for this email address.</p>
+        <p><a href="#" class="send-email-toggle">Send bookings to another email address</a></p>
+        <p><a href="find-bookings.html">Back to 'Find a booking'</a></p>
+      </div>
     </div>
   </main>
   @@include("_footer.html")

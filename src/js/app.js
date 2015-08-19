@@ -1,6 +1,4 @@
 (function () {
-    var V = window.Velocity || function () {};
-
     // ALL THE ELEMENTS
     var navToggle = document.getElementById('nav-toggle');
     var siteNav = document.getElementById('account-nav');
@@ -10,12 +8,13 @@
     var activeBookings = document.getElementById('bookings-active');
     var pastBookings = document.getElementById('bookings-past');
     var pastBookingsHeader = document.getElementById('past-bookings-heading');
-    var noConfNumber = document.getElementById('no-conf-number');
     var paymentCardForm = document.getElementById('payment-card-form');
+    var confNumberForm = document.getElementById('conf-number-form');
     var findBookingForm = document.getElementById('find-booking-form');
     var feedback = document.getElementById('feedback');
     var feedbackThanks = document.getElementById('feedback-thanks');
     var feedbackForm = document.getElementById('feedback-form');
+    var sendEmail = document.getElementById('send-email');
 
     var openEditForm, closeEditForm, validateEditForm, updateSummary, renderBooking;
 
@@ -210,12 +209,19 @@
     }
 
     // Find booking form
-    if (noConfNumber && paymentCardForm && findBookingForm) {
-        noConfNumber.addEventListener('click', e => {
+    if (paymentCardForm && findBookingForm && confNumberForm) {
+        let noConfToggle = $('.no-conf-toggle');
+        noConfToggle.on('click', e => {
             e.preventDefault();
-            noConfNumber.classList.add('hidden');
-            paymentCardForm.classList.remove('hidden');
-            findBookingForm.action = 'bookings.html';
+            if (confNumberForm.style.display === 'none') {
+                findBookingForm.action = 'view-reservation.html';
+                $.Velocity.animate(paymentCardForm, 'slideUp', { duration: 200 });
+                $.Velocity.animate(confNumberForm, 'slideDown', { delay: 200, duration: 200 });
+            } else {
+                findBookingForm.action = 'bookings.html';
+                $.Velocity.animate(confNumberForm, 'slideUp', { duration: 200 });
+                $.Velocity.animate(paymentCardForm, 'slideDown', { delay: 200, duration: 200 });
+            }
         });
     }
 
@@ -234,5 +240,23 @@
                 $('.feedback-hideme').remove();
             }
         });
+    }
+
+    // Send email page
+    if (sendEmail) {
+        let toggle = $('.send-email-toggle');
+        let emailSent = document.getElementById('email-sent');
+        if (toggle && emailSent) {
+            toggle.on('click', e => {
+                e.preventDefault();
+                if (sendEmail.style.display === 'none') {
+                    $.Velocity.animate(emailSent, 'fadeOut', { duration: 300 });
+                    $.Velocity.animate(sendEmail, 'fadeIn', { delay: 250, duration: 300 });
+                } else {
+                    $.Velocity.animate(sendEmail, 'fadeOut', { duration: 300 });
+                    $.Velocity.animate(emailSent, 'fadeIn', { delay: 250, duration: 300 });
+                }
+            });
+        }
     }
 })();
