@@ -5,6 +5,8 @@ var babel = require('gulp-babel');
 var uglify = require('gulp-uglify');
 var fileinclude = require('gulp-file-include');
 var sourcemaps = require('gulp-sourcemaps');
+var imagemin = require('gulp-imagemin');
+var pngquant = require('imagemin-pngquant');
 var del = require('del');
 var browserSync = require('browser-sync');
 var reload = browserSync.reload;
@@ -24,7 +26,12 @@ function buildHTML () {
 }
 
 function buildImages () {
-    return gulp.src('./src/images/**/*')
+    return gulp.src('./src/images/**/*.png')
+        .pipe(imagemin({
+            progressive: true,
+            svgoPlugins: [{ removeViewBox: false}],
+            use: [pngquant()]
+        }))
         .pipe(gulp.dest('./dist/images'))
         .pipe(reload({ stream: true }));
 }
@@ -78,7 +85,7 @@ gulp.task('serve', ['build'], function () {
     });
 
     gulp.watch('src/**/*.html', buildHTML);
-    gulp.watch('src/images/**/*', buildImages);
+    gulp.watch('src/images/**/*.png', buildImages);
     gulp.watch('src/fonts/**/*', buildFonts);
     gulp.watch('src/styles/**/*.scss', buildCSS);
     gulp.watch('src/js/**/*.js', buildJS);

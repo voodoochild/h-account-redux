@@ -146,10 +146,11 @@
         renderBooking = function (booking, active) {
             let {name, contact, checkin, checkout, confirmation, cancelled} = booking;
             let li = document.createElement('li');
+            let href = active ? 'view-reservation' : 'view-past-reservation';
             li.classList.add('booking');
             if (cancelled) { name += ' (cancelled)'; }
             li.innerHTML = `
-                <a href="view-reservation.html">
+                <a href="${href}.html">
                     <h3>${name}</h3>
                     <div class="contact">${contact}</div>
                     <div class="check-in">Check in: ${checkin}</div>
