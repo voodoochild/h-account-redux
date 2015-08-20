@@ -153,7 +153,7 @@
                 name += ' (cancelled)';
             }
             li.innerHTML = `
-                <div class="booking-thumbnail"><a href="${href}"></a></div>
+                <div class="booking-thumbnail"><a href="${href}.html"></a></div>
                 <a class="booking-header booking-row" href="${href}.html">
                     <h3>${name}</h3>
                     <span class="booking-contact">${contact}</span>
