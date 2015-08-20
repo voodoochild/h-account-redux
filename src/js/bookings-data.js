@@ -34,6 +34,15 @@
                     thumbnail: 'http://exp.cdn-hotels.com/hotels/2000000/1300000/1296600/1296584/1296584_50_z.jpg'
                 },
                 {
+                    name: 'Blue Home Villa',
+                    contact: 'Orlando, Cambodia',
+                    checkin: 'Saturday, 16th April 2016',
+                    checkout: 'Sunday, 17th April 2016',
+                    confirmation: 124172251234,
+                    thumbnail: 'http://exp.cdn-hotels.com/hotels/12000000/11890000/11888500/11888414/11888414_10_y.jpg',
+                    cardonly: true
+                },
+                {
                     name: 'Backpacker Hostel',
                     contact: 'Phnom Penh, Cambodia',
                     checkin: 'Thursday, 12th October 2015',
@@ -71,6 +80,15 @@
                     checkout: 'Sunday, 6th October 2015',
                     confirmation: 124172251234,
                     thumbnail: 'http://exp.cdn-hotels.com/hotels/2000000/1300000/1296600/1296584/1296584_50_z.jpg'
+                },
+                {
+                    name: 'Blue Home Villa',
+                    contact: 'Orlando, Cambodia',
+                    checkin: 'Saturday, 16th April 2016',
+                    checkout: 'Sunday, 17th April 2016',
+                    confirmation: 124172251234,
+                    thumbnail: 'http://exp.cdn-hotels.com/hotels/12000000/11890000/11888500/11888414/11888414_10_y.jpg',
+                    cardonly: true
                 },
                 {
                     name: 'Patio Hotel and Urban Resort',

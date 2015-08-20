@@ -143,14 +143,21 @@
 
     // Bookings
     if (window.getBookings) {
+        let paymentcard = window.location.search.indexOf('paymentcard=true') !== -1;
+
         renderBooking = function (booking, active) {
-            let {name, contact, checkin, checkout, confirmation, cancelled, thumbnail} = booking;
+            let {name, contact, checkin, checkout, confirmation, cancelled, thumbnail, cardonly} = booking;
             let li = document.createElement('li');
             let href = active ? 'view-reservation' : 'view-past-reservation';
             li.classList.add('booking');
             if (cancelled) {
                 li.classList.add('cancelled');
                 name += ' (cancelled)';
+            }
+            if (cardonly === true) {
+                href += '-paymentcard';
+                li.classList.add('paymentcard');
+                if (!paymentcard) { li.classList.add('hidden'); }
             }
             li.innerHTML = `
                 <div class="booking-thumbnail"><a href="${href}.html"></a></div>
@@ -226,10 +233,17 @@
         noConfToggle.on('click', e => {
             e.preventDefault();
             if (confNumberForm.style.display === 'none') {
+                $('#paymentcard').remove();
                 findBookingForm.action = 'view-reservation.html';
                 $.Velocity.animate(paymentCardForm, 'slideUp', { duration: 200 });
                 $.Velocity.animate(confNumberForm, 'slideDown', { delay: 200, duration: 200 });
             } else {
+                let paymentcard = document.createElement('input');
+                paymentcard.type = 'hidden';
+                paymentcard.id = 'paymentcard';
+                paymentcard.name = 'paymentcard';
+                paymentcard.value = true;
+                findBookingForm.appendChild(paymentcard);
                 findBookingForm.action = 'bookings.html';
                 $.Velocity.animate(confNumberForm, 'slideUp', { duration: 200 });
                 $.Velocity.animate(paymentCardForm, 'slideDown', { delay: 200, duration: 200 });
