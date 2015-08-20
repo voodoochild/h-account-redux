@@ -174,16 +174,13 @@
                 li.querySelector('.booking-thumbnail a').style['background-image'] = `url(${thumbnail})`;
             }
 
-            if (cardonly === true) {
-                if (paymentcard) {
-                    li.classList.add('attach');
-                    li.innerHTML += `<div class="booking-attach">
-                        <b>Not collecting Hotels.com Rewards nights with this stay.</b> It’s not too
-                        late, you can still attach this booking to your account on the booking page.
-                    </div>`;
-                } else {
-                    li.classList.add('hidden');
-                }
+            if (cardonly === true && !paymentcard) {
+                li.classList.add('hidden');
+            } else if (id === 'blue' && paymentcard) {
+                li.innerHTML += `<div class="booking-attach">
+                    <b>Not collecting Hotels.com Rewards nights with this stay.</b> It’s not too
+                    late, you can still attach this booking to your account on the booking page.
+                </div>`;
             }
 
             if (active) {
