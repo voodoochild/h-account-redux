@@ -3,6 +3,7 @@
         Jo: {
             active: [
                 {
+                    id: 'blue',
                     name: 'Blue Home Villa',
                     contact: 'Orlando, Cambodia',
                     checkin: 'Saturday, 16th April 2016',
@@ -13,6 +14,7 @@
             ],
             past: [
                 {
+                    id: 'brighton',
                     name: 'The Grand Hotel Brighton',
                     contact: 'Brighton, GB',
                     checkin: 'Saturday, 11th April 2015',
@@ -26,6 +28,7 @@
         Robin: {
             active: [
                 {
+                    id: 'residence',
                     name: 'Residence Nemea La Soulane',
                     contact: 'Loudenvielle, France',
                     checkin: 'Monday, 30th September 2015',
@@ -34,6 +37,7 @@
                     thumbnail: 'http://exp.cdn-hotels.com/hotels/2000000/1300000/1296600/1296584/1296584_50_z.jpg'
                 },
                 {
+                    id: 'blue',
                     name: 'Blue Home Villa',
                     contact: 'Orlando, Cambodia',
                     checkin: 'Saturday, 16th April 2016',
@@ -43,6 +47,7 @@
                     cardonly: true
                 },
                 {
+                    id: null,
                     name: 'Backpacker Hostel',
                     contact: 'Phnom Penh, Cambodia',
                     checkin: 'Thursday, 12th October 2015',
@@ -53,6 +58,7 @@
             ],
             past: [
                 {
+                    id: 'brighton',
                     name: 'The Grand Hotel Brighton',
                     contact: 'Brighton, GB',
                     checkin: 'Saturday, 11th April 2015',
@@ -61,6 +67,7 @@
                     thumbnail: 'http://exp.cdn-hotels.com/hotels/1000000/430000/425800/425706/425706_26_z.jpg'
                 },
                 {
+                    id: 'amsterdam',
                     name: 'Hotel des Arts',
                     contact: 'Amsterdam, Netherlands',
                     checkin: 'Saturday, 1st August 2014',
@@ -74,6 +81,7 @@
         Sam: {
             active: [
                 {
+                    id: 'residence',
                     name: 'Residence Nemea La Soulane',
                     contact: 'Loudenvielle, France',
                     checkin: 'Monday, 30th September 2015',
@@ -82,6 +90,7 @@
                     thumbnail: 'http://exp.cdn-hotels.com/hotels/2000000/1300000/1296600/1296584/1296584_50_z.jpg'
                 },
                 {
+                    id: 'blue',
                     name: 'Blue Home Villa',
                     contact: 'Orlando, Cambodia',
                     checkin: 'Saturday, 16th April 2016',
@@ -91,6 +100,7 @@
                     cardonly: true
                 },
                 {
+                    id: null,
                     name: 'Patio Hotel and Urban Resort',
                     contact: 'Phnom Penh, Cambodia',
                     checkin: 'Thursday, 12th October 2015',
@@ -99,6 +109,7 @@
                     thumbnail: 'http://exp.cdn-hotels.com/hotels/7000000/6440000/6432100/6432067/6432067_91_z.jpg'
                 },
                 {
+                    id: null,
                     name: 'Backpacker Hostel',
                     contact: 'Phnom Penh, Cambodia',
                     checkin: 'Thursday, 12th October 2015',
@@ -109,6 +120,7 @@
             ],
             past: [
                 {
+                    id: 'brighton',
                     name: 'The Grand Hotel Brighton',
                     contact: 'Brighton, GB',
                     checkin: 'Saturday, 11th April 2015',
@@ -117,6 +129,7 @@
                     thumbnail: 'http://exp.cdn-hotels.com/hotels/1000000/430000/425800/425706/425706_26_z.jpg'
                 },
                 {
+                    id: 'amsterdam',
                     name: 'Hotel des Arts',
                     contact: 'Amsterdam, Netherlands',
                     checkin: 'Saturday, 1st August 2014',
@@ -125,6 +138,7 @@
                     thumbnail: 'http://exp.cdn-hotels.com/hotels/2000000/1530000/1521600/1521568/1521568_37_b.jpg'
                 },
                 {
+                    id: null,
                     name: 'Mermaid Inn',
                     contact: 'Rye, GB',
                     checkin: 'Saturday, 12th April 2014',
@@ -132,6 +146,7 @@
                     confirmation: 8876543211
                 },
                 {
+                    id: null,
                     name: 'W Hotel',
                     contact: 'Los Angeles, USA',
                     checkin: 'Saturday, 1st January 2014',
@@ -139,6 +154,7 @@
                     confirmation: 7876543211
                 },
                 {
+                    id: 'brighton',
                     name: 'The Grand Hotel Brighton',
                     contact: 'Brighton, GB',
                     checkin: 'Saturday, 12th April 2013',
@@ -147,6 +163,7 @@
                     thumbnail: 'http://exp.cdn-hotels.com/hotels/1000000/430000/425800/425706/425706_26_z.jpg'
                 },
                 {
+                    id: null,
                     name: 'Intercontinental Berlin',
                     contact: 'Berlin, Germany',
                     checkin: 'Saturday, 19th February 2013',
@@ -155,6 +172,7 @@
                     thumbnail: 'http://exp.cdn-hotels.com/hotels/1000000/10000/5700/5619/5619_680_z.jpg'
                 },
                 {
+                    id: null,
                     name: 'Hotel Du Vin, York',
                     contact: 'York, GB',
                     checkin: 'Friday, 10th July 2012',
@@ -163,6 +181,7 @@
                     thumbnail: 'http://exp.cdn-hotels.com/hotels/8000000/7740000/7730500/7730418/7730418_45_z.jpg'
                 },
                 {
+                    id: null,
                     name: 'Queens Hotel',
                     contact: 'Leeds, GB',
                     checkin: 'Monday, 1st August 2012',

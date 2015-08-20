@@ -385,6 +385,10 @@ h1 {
     color: $greyishBrown;
 }
 
+.booking-wrap {
+    position: relative;
+}
+
 .booking-row {
     display: block;
     margin-top: 0;
@@ -460,6 +464,13 @@ h1 {
     color: $warmGrey;
     display: block;
     margin-bottom: 6px;
+}
+
+.booking-attach {
+    background-color: $lightTan;
+    border-top: 1px solid $footer-separator;
+    margin-top: 0;
+    padding: 10px;
 }
 
 @include from-breakpoint(mediumlarge) {

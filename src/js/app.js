@@ -146,35 +146,46 @@
         let paymentcard = window.location.search.indexOf('paymentcard=true') !== -1;
 
         renderBooking = function (booking, active) {
-            let {name, contact, checkin, checkout, confirmation, cancelled, thumbnail, cardonly} = booking;
+            let {id, name, contact, checkin, checkout, confirmation, cancelled, thumbnail, cardonly} = booking;
             let li = document.createElement('li');
-            let href = active ? 'view-reservation' : 'view-past-reservation';
+            let href = id ? `view-res--${id}.html` : '#';
             li.classList.add('booking');
             if (cancelled) {
                 li.classList.add('cancelled');
                 name += ' (cancelled)';
             }
-            if (cardonly === true) {
-                href += '-paymentcard';
-                li.classList.add('paymentcard');
-                if (!paymentcard) { li.classList.add('hidden'); }
-            }
             li.innerHTML = `
-                <div class="booking-thumbnail"><a href="${href}.html"></a></div>
-                <a class="booking-header booking-row" href="${href}.html">
-                    <h3>${name}</h3>
-                    <span class="booking-contact">${contact}</span>
-                </a>
-                <div class="booking-row">
-                    <div class="booking-date-wrap"><span class="booking-date">Check in</span> ${checkin}</div>
-                    <div class="booking-date-wrap"><span class="booking-date">Check out</span> ${checkout}</div>
-                </div>
-                <div class="booking-row booking-confirmation">
-                    Confirmation number: ${confirmation}
+                <div class="booking-wrap">
+                    <div class="booking-thumbnail"><a href="${href}"></a></div>
+                    <a class="booking-header booking-row" href="${href}">
+                        <h3>${name}</h3>
+                        <span class="booking-contact">${contact}</span>
+                    </a>
+                    <div class="booking-row">
+                        <div class="booking-date-wrap"><span class="booking-date">Check in</span> ${checkin}</div>
+                        <div class="booking-date-wrap"><span class="booking-date">Check out</span> ${checkout}</div>
+                    </div>
+                    <div class="booking-row booking-confirmation">
+                        Confirmation number: ${confirmation}
+                    </div>
                 </div>`;
+
             if (thumbnail) {
                 li.querySelector('.booking-thumbnail a').style['background-image'] = `url(${thumbnail})`;
             }
+
+            if (cardonly === true) {
+                if (paymentcard) {
+                    li.classList.add('attach');
+                    li.innerHTML += `<div class="booking-attach">
+                        <b>Not collecting Hotels.com Rewards nights with this stay.</b> It’s not too
+                        late, you can still attach this booking to your account on the booking page.
+                    </div>`;
+                } else {
+                    li.classList.add('hidden');
+                }
+            }
+
             if (active) {
                 activeBookings.appendChild(li);
             } else {
@@ -234,7 +245,7 @@
             e.preventDefault();
             if (confNumberForm.style.display === 'none') {
                 $('#paymentcard').remove();
-                findBookingForm.action = 'view-reservation.html';
+                findBookingForm.action = 'view-res--blue.html';
                 $.Velocity.animate(paymentCardForm, 'slideUp', { duration: 200 });
                 $.Velocity.animate(confNumberForm, 'slideDown', { delay: 200, duration: 200 });
             } else {

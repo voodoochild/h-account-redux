@@ -90,8 +90,9 @@ label {
 }
 
 .booking-contact,
-.booking-confirmation {
-    @include font-size(14);
+.booking-confirmation,
+.booking-attach {
+    @include font-size(14, 21);
 }
 
 #past-bookings-heading {
