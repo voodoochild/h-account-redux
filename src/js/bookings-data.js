@@ -5,7 +5,7 @@
                 {
                     id: 'blue',
                     name: 'Blue Home Villa',
-                    contact: 'Orlando, Cambodia',
+                    contact: 'Orlando, Florida',
                     checkin: 'Saturday, 16th April 2016',
                     checkout: 'Sunday, 17th April 2016',
                     confirmation: 124172251234,
@@ -39,7 +39,7 @@
                 {
                     id: 'blue',
                     name: 'Blue Home Villa',
-                    contact: 'Orlando, Cambodia',
+                    contact: 'Orlando, Florida',
                     checkin: 'Saturday, 16th April 2016',
                     checkout: 'Sunday, 17th April 2016',
                     confirmation: 124172251234,
@@ -92,7 +92,7 @@
                 {
                     id: 'blue',
                     name: 'Blue Home Villa',
-                    contact: 'Orlando, Cambodia',
+                    contact: 'Orlando, Florida',
                     checkin: 'Saturday, 16th April 2016',
                     checkout: 'Sunday, 17th April 2016',
                     confirmation: 124172251234,
