@@ -135,6 +135,7 @@
     // Bookings
     if (window.getBookings) {
         let paymentcard = window.location.search.indexOf('paymentcard=true') !== -1;
+        let newUserCreated = window.location.search.indexOf('created=true') !== -1;
 
         renderBooking = function (booking, active) {
             let {id, name, contact, checkin, checkout, confirmation, cancelled, thumbnail, cardonly} = booking;
@@ -186,7 +187,9 @@
             let past = bookings.past || [];
 
             // Update bookings count in nav
-            if (active.length) {
+            if (newUserCreated) {
+                $('.bookings-link').attr('href', 'find-bookings.html');
+            } else if (active.length) {
                 let activeCount = document.querySelectorAll('.bookings-active-count');
                 let notCancelled = active.filter(b => !b.cancelled).length;
                 if (activeCount && notCancelled > 0) {

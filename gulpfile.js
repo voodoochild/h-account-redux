@@ -71,7 +71,6 @@ function buildJS () {
 }
 
 gulp.task('build', function () {
-    clean();
     buildHTML();
     buildImages();
     buildFonts();
