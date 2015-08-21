@@ -1,0 +1,29 @@
+.small-dummy-content,
+.large-dummy-content {
+    margin-top: 0;
+    position: relative;
+    width: 100%;
+}
+
+.small-dummy-content img,
+.large-dummy-content img {
+    width: 100%;
+}
+
+.large-dummy-content {
+    display: none;
+}
+
+@include from-breakpoint(small) {
+    .small-dummy-content {
+        display: none;
+    }
+    .large-dummy-content {
+        display: block;
+    }
+}
+
+.dummy-link {
+    display: block;
+    position: absolute;
+}

@@ -611,6 +611,12 @@ h1 {
 }
 
 @include from-breakpoint(medium) {
+    .account-settings .edit-form button {
+        display: block;
+        margin-top: 1em;
+        width: 220px;
+    }
+
     #footer-nav {
         display: none;
     }
@@ -686,25 +692,6 @@ h1 {
     margin-top: 1em;
 }
 
-.small-dummy-content,
-.large-dummy-content {
-    margin-top: 0;
-    width: 100%;
-}
-
-.large-dummy-content {
-    display: none;
-}
-
-@include from-breakpoint(small) {
-    .small-dummy-content {
-        display: none;
-    }
-    .large-dummy-content {
-        display: block;
-    }
-}
-
 #payment-card-form,
 #email-sent {
     display: none;
@@ -720,3 +707,5 @@ h1 {
     top: 0;
     right: 0;
 }
+
+@import '_dummy-content';
