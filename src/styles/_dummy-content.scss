@@ -14,7 +14,7 @@
     display: none;
 }
 
-@include from-breakpoint(small) {
+@include from-breakpoint(medium) {
     .small-dummy-content {
         display: none;
     }
