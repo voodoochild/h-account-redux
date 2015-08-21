@@ -201,7 +201,7 @@ footer,
     }
 
     #account-nav li + li {
-        margin-left: .5em;
+        margin-left: 1em;
     }
 
     #account-nav a {
@@ -248,7 +248,7 @@ footer,
     }
 
     #secondary-nav li + li {
-        margin-left: .5em;
+        margin-left: 1em;
     }
 
     #secondary-nav .right {
@@ -257,7 +257,7 @@ footer,
     }
 
     #secondary-nav .right + .right {
-        margin-right: .5em;
+        margin-right: 1.5em;
     }
 }
 
@@ -278,7 +278,7 @@ h1 {
 }
 
 .avatar {
-    background-color: #6b6b6b;
+    background-color: #970e65;
     border: 2px solid $offWhite;
     border-radius: 50%;
     height: 2em;
