@@ -166,11 +166,11 @@ footer,
 
 #account-nav .avatar-wrap {
     position: relative;
+    width: 28px;
 }
 
 #account-nav .avatar {
     top: -20px;
-    left: -28px;
     margin: 0;
 }
 
@@ -622,66 +622,15 @@ h1 {
     }
 }
 
-#phone-toggle {
-    cursor: help;
-    padding-right: 20px;
+.book-or-call {
+    padding-right: 24px;
     position: relative;
 }
 
-#phone-toggle .icon {
+.book-or-call .icon {
     position: absolute;
     top: 0;
     right: 0;
-}
-
-#phone-overlay {
-    background-color: #fff;
-    border: 2px solid $otherGrey;
-    border-radius: 4px;
-    box-shadow: $otherGrey 0 0 7px 0;
-    color: #7e7e7e;
-    padding: 10px;
-    position: absolute;
-    top: 20px;
-    transition: opacity 0.1s ease-out;
-    right: -17px;
-    width: 310px;
-    z-index: 1;
-}
-
-#phone-overlay:before,
-#phone-overlay:after {
-    content: '';
-    border-color: transparent;
-    border-style: solid;
-    border-width: 16px;
-    height: 0;
-    width: 0;
-    position: absolute;
-    right: 6px;
-}
-
-#phone-overlay:before {
-    border-bottom-color: $otherGrey;
-    top: -33px;
-}
-
-#phone-overlay:after {
-    border-bottom-color: #fff;
-    top: -30px;
-}
-
-#phone-overlay p {
-    margin: 0;
-}
-
-#phone-overlay p + p {
-    margin-top: 1em;
-}
-
-#phone-overlay .number {
-    display: block;
-    margin-bottom: 5px;
 }
 
 #feedback-form {
@@ -697,15 +646,5 @@ h1 {
     display: none;
 }
 
-#phone-toggle {
-    padding-right: 20px;
-    position: relative;
-}
-
-#phone-toggle .icon {
-    position: absolute;
-    top: 0;
-    right: 0;
-}
-
 @import '_dummy-content';
+@import '_overlays';

@@ -1,0 +1,57 @@
+.overlay:hover,
+.overlay-toggle:hover > .overlay {
+    display: block;
+}
+
+.overlay {
+    background-color: #fff;
+    border: 2px solid $otherGrey;
+    border-radius: 4px;
+    box-shadow: $otherGrey 0 0 7px 0;
+    color: #7e7e7e;
+    display: none;
+    padding: 10px;
+    position: absolute;
+    z-index: 1;
+}
+
+.overlay:before,
+.overlay:after {
+    content: '';
+    border-color: transparent;
+    border-style: solid;
+    border-width: 16px;
+    height: 0;
+    width: 0;
+    position: absolute;
+    right: 6px;
+}
+
+.overlay:before {
+    border-bottom-color: $otherGrey;
+    top: -33px;
+}
+
+.overlay:after {
+    border-bottom-color: #fff;
+    top: -30px;
+}
+
+.overlay p {
+    margin: 0;
+}
+
+.overlay p + p {
+    margin-top: 1em;
+}
+
+#phone-overlay {
+    top: 20px;
+    right: -17px;
+    width: 310px;
+}
+
+#phone-overlay .number {
+    display: block;
+    margin-bottom: 5px;
+}
