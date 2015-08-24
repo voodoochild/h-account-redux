@@ -20,13 +20,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-    @include font-size(22, 32);
+    @include font-size(24, 32);
     font-weight: 400;
 }
 
 h2 {
-    font-weight: 700;
-    @include font-size(16, 20);
+    @include font-size(20, 30);
+    font-weight: 400;
 }
 
 label {
@@ -42,7 +42,9 @@ label {
 @include from-breakpoint(medium) {
     #account-nav,
     #secondary-nav,
-    .page-nav .about {
+    .page-nav .about,
+    label,
+    .secondary-text {
         @include font-size(14);
     }
 }
@@ -52,7 +54,7 @@ label {
 }
 
 .note {
-    @include font-size(14);
+    @include font-size(14, 21);
 }
 
 #footer {
@@ -99,4 +101,8 @@ label {
     @include font-size(14);
     font-weight: 400;
     text-transform: uppercase;
+}
+
+#account-nav #user-nav li {
+    @include font-size(14, 21);
 }

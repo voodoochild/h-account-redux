@@ -22,9 +22,12 @@ textarea {
 }
 
 label + input,
-label + textarea,
-.account-settings label + .note {
-    margin-top: 1em;
+label + textarea {
+    margin-top: .4em;
+}
+
+label + .note {
+    margin: .4em 0;
 }
 
 #search-bookings input {

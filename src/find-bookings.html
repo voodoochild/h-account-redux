@@ -17,7 +17,7 @@
   					<label for="pw">Password</label>
   					<input type="password" id="pw" name="pw">
   				</div>
-  				<p><a href="#">Forgotten your password?</a></p>
+  				<p class="secondary-text"><a href="#">Forgotten your password?</a></p>
   				<div class="field">
   					<a href="" class="btn primary" onclick="window.goToBookingsPage();return false;">Sign in</a>
   				</div>
@@ -34,24 +34,27 @@
 					<p class="note">If you didn't book using a credit or debit card, please enter the guest's last name</p>
   				<input type="text" id="last-name" name="last-name">
   			</div>
-  			<div id="conf-number-form" class="field">
+  			<div id="conf-number-form" class="field" style="height: 120px;">
   				<label for="conf-number">Confirmation number</label>
 					<p class="note">You’ll find this in the confirmation email that we sent you when you booked.</p>
   				<input type="text" id="conf-number" name="conf-number" />
-          <p><a class="no-conf-toggle" href="#">Don't know your confirmation number?</a></p>
+          <p class="secondary-text"><a class="no-conf-toggle" href="#">Don't know your confirmation number?</a></p>
   			</div>
-        <div id="payment-card-form" class="field hidden">
+        <div id="payment-card-form" class="field hidden" style="height: 120px;">
           <label for="payment-card-number">Payment card number</label>
-          <p class="note">Credit or debit card number used to make the booking <span class="icon">&#xe019;</span></p>
+          <p class="note">Credit or debit card number used to make the booking&nbsp;&nbsp;<span class="icon">&#xe019;</span></p>
           <input type="text" id="payment-card-number" name="payment-card-number" />
-          <p><a class="no-conf-toggle" href="#">Back to confirmation number</a></p>
+          <p class="secondary-text"><a class="no-conf-toggle" href="#">Back to confirmation number</a></p>
         </div>
   			<div class="field">
           <form id="find-booking-form" action="view-res--blue.html">
     				<button type="submit" class="button primary">Find booking</button>
           </form>
   			</div>
-  			<p><a href="send-email.html">We can email you a list of all your bookings</a></p>
+        <div class="facebook-signin">
+          <h2>We can email you a list of all your bookings</h2>
+    			<p><a href="send-email.html">Email my bookings</a></p>
+        </div>
   		</div>
     </div>
   </main>

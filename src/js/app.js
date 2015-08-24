@@ -57,6 +57,7 @@
             if (e.target.nodeName !== 'A') {
                 e.preventDefault();
                 userNav.classList.toggle('hidden');
+                userNavToggle.classList.toggle('subnav-open');
             }
         });
     }
