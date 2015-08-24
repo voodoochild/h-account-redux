@@ -254,11 +254,13 @@
         let noConfToggle = $('.no-conf-toggle');
         noConfToggle.on('click', e => {
             e.preventDefault();
-            if (confNumberForm.style.display === 'none') {
+            if (confNumberForm.classList.contains('hidden')) {
                 $('#paymentcard').remove();
                 findBookingForm.action = 'view-res--blue.html';
-                $.Velocity.animate(paymentCardForm, 'slideUp', { duration: 200 });
-                $.Velocity.animate(confNumberForm, 'slideDown', { delay: 200, duration: 200 });
+                paymentCardForm.classList.add('hidden');
+                confNumberForm.classList.remove('hidden');
+                // $.Velocity.animate(paymentCardForm, 'slideUp', { duration: 200 });
+                // $.Velocity.animate(confNumberForm, 'slideDown', { delay: 200, duration: 200 });
             } else {
                 let paymentcard = document.createElement('input');
                 paymentcard.type = 'hidden';
@@ -267,8 +269,10 @@
                 paymentcard.value = true;
                 findBookingForm.appendChild(paymentcard);
                 findBookingForm.action = 'bookings.html';
-                $.Velocity.animate(confNumberForm, 'slideUp', { duration: 200 });
-                $.Velocity.animate(paymentCardForm, 'slideDown', { delay: 200, duration: 200 });
+                confNumberForm.classList.add('hidden');
+                paymentCardForm.classList.remove('hidden');
+                // $.Velocity.animate(confNumberForm, 'slideUp', { duration: 200 });
+                // $.Velocity.animate(paymentCardForm, 'slideDown', { delay: 200, duration: 200 });
             }
         });
     }
