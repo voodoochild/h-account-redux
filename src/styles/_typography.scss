@@ -107,7 +107,3 @@ label {
 #account-nav #user-nav li {
     @include font-size(14, 21);
 }
-
-#account-nav .bookings-active-count {
-    @include font-size(12);
-}

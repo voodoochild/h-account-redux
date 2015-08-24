@@ -213,13 +213,6 @@ footer,
         color: $offWhite;
     }
 
-    #account-nav .bookings-active-count {
-        background-color: #5a1908;
-        border-radius: 4px;
-        margin-left: 4px;
-        padding: 2px 6px;
-    }
-
     #banner .username {
         display: none;
     }
@@ -544,10 +537,11 @@ h1 {
 }
 
 .find-bookings-cta.top {
-    position: absolute;
-    top: 0;
-    right: 16px;
-
+    @include from-breakpoint(medium) {
+        position: absolute;
+        top: 0;
+        right: 16px;
+    }
     @include from-breakpoint(xlarge) {
         margin-right: 336px;
     }
