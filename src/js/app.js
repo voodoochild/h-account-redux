@@ -53,11 +53,16 @@
 
     // User nav
     if (userNav && userNavToggle) {
-        userNavToggle.addEventListener('click', e => {
-            if (e.target.nodeName !== 'A') {
-                e.preventDefault();
-                userNav.classList.toggle('hidden');
-                userNavToggle.classList.toggle('subnav-open');
+        userNavToggle.addEventListener('mouseover', e => {
+            if (userNav.classList.contains('hidden')) {
+                userNav.classList.remove('hidden');
+                userNavToggle.classList.add('subnav-open');
+            }
+        });
+        userNavToggle.addEventListener('mouseout', e => {
+            if (!userNav.classList.contains('hidden')) {
+                userNav.classList.add('hidden');
+                userNavToggle.classList.remove('subnav-open');
             }
         });
     }

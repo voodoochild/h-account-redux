@@ -165,14 +165,9 @@ footer,
     right: 16px;
 }
 
-#account-nav .avatar-wrap {
-    position: relative;
-    width: 28px;
-}
-
 #account-nav .avatar {
-    top: -20px;
     margin: 0;
+    top: 1em;
 }
 
 @include from-breakpoint(medium) {
@@ -218,6 +213,13 @@ footer,
         color: $offWhite;
     }
 
+    #account-nav .bookings-active-count {
+        background-color: #5a1908;
+        border-radius: 4px;
+        margin-left: 4px;
+        padding: 2px 6px;
+    }
+
     #banner .username {
         display: none;
     }
@@ -236,6 +238,7 @@ footer,
 
     #user-nav {
         background-color: transparent;
+        border-top: 1px solid #5a1908;
         position: absolute;
         left: 0;
         right: 0;
@@ -258,6 +261,17 @@ footer,
         color: $offWhite;
         display: block;
         padding: 10px;
+    }
+
+    #account-nav .signed-out-avatar {
+        cursor: pointer;
+        padding-right: 4em;
+        position: relative;
+    }
+
+    #account-nav .signed-out-avatar .avatar {
+        background-color: white;
+        right: 1em;
     }
 }
 
@@ -381,7 +395,8 @@ h1 {
 }
 
 #footer {
-    margin-top: 0;
+    border-top: 1px solid $footer-separator;
+    margin-top: -1px;
     padding-top: 16px;
 }
 
@@ -528,6 +543,16 @@ h1 {
     padding: 10px;
 }
 
+.find-bookings-cta.top {
+    position: absolute;
+    top: 0;
+    right: 16px;
+
+    @include from-breakpoint(xlarge) {
+        margin-right: 336px;
+    }
+}
+
 .find-bookings-cta .btn {
     margin-top: 1em;
 }
@@ -596,14 +621,10 @@ h1 {
     margin-bottom: 1em;
 }
 
-.bookings-content {
-    position: relative;
-}
-
 .bookings-filler {
     display: none;
     position: absolute;
-    top: 24px;
+    top: 121px;
     right: 16px;
     width: 320px;
 
@@ -641,10 +662,6 @@ h1 {
         margin-right: 2em;
         padding-right: 2em;
     }
-
-    // .signed-out .formgroup:nth-child(2) {
-    //     padding-left: 2em;
-    // }
 
     .formgroup + .formgroup {
         border-top: none;
@@ -736,6 +753,32 @@ h1 {
     @include from-breakpoint(mediumlarge) {
         display: none;
     }
+}
+
+.profile-heading .profile-username {
+    padding-left: 44px;
+}
+
+.profile-heading .avatar {
+    height: 32px;
+    margin-top: 28px;
+    left: 0;
+}
+
+.profile-back {
+    background-image: url(../images/arrow-left.png);
+    background-position: left center;
+    background-repeat: no-repeat;
+    background-size: 11px 18px;
+    color: #555;
+}
+
+.profile-back .avatar {
+    left: 20px;
+}
+
+.profile-back .profile-username {
+    padding-left: 60px;
 }
 
 @import '_dummy-content';
