@@ -95,7 +95,7 @@ label {
     @include font-size(14, 21);
 }
 
-#past-bookings-heading {
+.bookings-subheading {
     @include font-size(14);
     font-weight: 400;
     text-transform: uppercase;

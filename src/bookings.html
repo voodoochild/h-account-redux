@@ -1,18 +1,19 @@
 @@include("_head.html", { "title": "Your bookings" })
   @@include("_banner.html")
   <main class="nonwhite">
-    <h1>Your bookings <span class="bookings-upcoming-count"></span></h1>
+    <h1>Your bookings</h1>
     <div class="content-wrap bookings-content">
-      <p>Can’t see your booking below? <a href="find-bookings.html">Find a booking</a> using your confirmation number or enter the card number used to pay for the booking.</p>
+      <p class="find-bookings-cta">Can’t see your booking below? <a class="btn" href="find-bookings.html">Find a booking</a></p>
       <div id="search-bookings" class="hidden">
         <input type="text" placeholder="Enter a hotel name or destination">
         <button>Search your bookings</button>
       </div>
+      <h2 class="bookings-subheading">Bookings <span class="bookings-upcoming-count"></span></h2>
       <ol id="bookings-active" class="bookings"></ol>
-      <h2 id="past-bookings-heading" class="hidden">Past bookings</h2>
+      <h2 id="past-bookings-heading" class="bookings-subheading hidden">Past bookings <span class="bookings-past-count"></span></h2>
       <ol id="bookings-past" class="bookings"></ol>
       <p id="bookings-pagination" class="hidden">Page <a href="#">1</a>, <a href="#">2</a>, <a href="#">3</a></p>
-      <p>Can’t see your booking below? <a href="find-bookings.html">Find a booking</a> using your confirmation number or enter the card number used to pay for the booking.</p>
+      <p class="find-bookings-cta">Can’t see your booking below? <a class="btn" href="find-bookings.html">Find a booking</a></p>
       <img class="bookings-filler" src="images/filler.png" />
     </div>
   </main>

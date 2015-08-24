@@ -211,6 +211,41 @@ footer,
     #banner .username {
         display: none;
     }
+
+    #user-nav-toggle {
+        cursor: pointer;
+        margin-right: 1em;
+        padding-left: 38px;
+        position: relative;
+    }
+
+    #user-nav-toggle .avatar {
+        top: -.5em;
+        left: 0;
+    }
+
+    #user-nav {
+        background-color: $offWhite;
+        outline: 1px solid red;
+        position: absolute;
+        left: 0;
+        right: 0;
+    }
+
+    #user-nav li {
+        display: block;
+        text-align: right;
+    }
+
+    #user-nav li + li {
+        margin: 0;
+    }
+
+    #user-nav a {
+        color: $warmGrey;
+        display: block;
+        padding: 10px;
+    }
 }
 
 #banner .logo {
@@ -473,6 +508,15 @@ h1 {
     padding: 10px;
 }
 
+.find-bookings-cta .btn {
+    margin-top: 1em;
+}
+
+.bookings-subheading {
+    color: #777;
+    margin-top: 3em;
+}
+
 @include from-breakpoint(mediumlarge) {
     .booking {
         min-height: 170px;
@@ -508,11 +552,20 @@ h1 {
         margin-top: 0;
         margin-left: 3em;
     }
+
+    .find-bookings-cta {
+        text-align: right;
+    }
+
+    .find-bookings-cta .btn {
+        margin-left: 1em;
+    }
 }
 
-#past-bookings-heading {
-    color: #777;
-    margin-top: 3em;
+@include from-breakpoint(xlarge) {
+    .find-bookings-cta {
+        margin-right: 336px;
+    }
 }
 
 .note {
@@ -644,6 +697,15 @@ h1 {
 #payment-card-form,
 #email-sent {
     display: none;
+}
+
+.account-sign-out {
+    margin-top: 0;
+    padding: 16px;
+
+    @include from-breakpoint(mediumlarge) {
+        display: none;
+    }
 }
 
 @import '_dummy-content';

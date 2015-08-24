@@ -2,6 +2,8 @@
     // ALL THE ELEMENTS
     var navToggle = document.getElementById('nav-toggle');
     var siteNav = document.getElementById('account-nav');
+    var userNavToggle = document.getElementById('user-nav-toggle');
+    var userNav = document.getElementById('user-nav');
     var accountSettings = document.querySelector('.account-settings');
     var activeBookings = document.getElementById('bookings-active');
     var pastBookings = document.getElementById('bookings-past');
@@ -46,6 +48,16 @@
             e.preventDefault();
             siteNav.classList.toggle('expanded');
             navToggle.innerHTML = siteNav.classList.contains('expanded') ? '&#xe07c;' : '&#xe035;';
+        });
+    }
+
+    // User nav
+    if (userNav && userNavToggle) {
+        userNavToggle.addEventListener('click', e => {
+            if (e.target.nodeName !== 'A') {
+                e.preventDefault();
+                userNav.classList.toggle('hidden');
+            }
         });
     }
 
@@ -191,18 +203,26 @@
                 $('.bookings-link').attr('href', 'find-bookings.html');
             } else if (active.length) {
                 let activeCount = document.querySelectorAll('.bookings-active-count');
-                let notCancelled = active.filter(b => !b.cancelled).length;
-                if (activeCount && notCancelled > 0) {
+                let cancelled = active.filter(b => b.cancelled).length;
+                let cardonly = active.filter(b => b.cardonly).length;
+                let upcoming = active.length - cancelled - cardonly;
+                if (paymentcard) { upcoming += cardonly; }
+                if (activeCount && upcoming > 0) {
                     for (let i = 0; i < activeCount.length; i++) {
-                        activeCount[i].innerHTML = `(${notCancelled})`;
+                        activeCount[i].innerHTML = `(${upcoming})`;
                     }
                     let upcomingCount = document.querySelector('.bookings-upcoming-count');
-                    if (upcomingCount) { upcomingCount.innerHTML = `(${notCancelled} upcoming)`; }
+                    if (upcomingCount) { upcomingCount.innerHTML = `(${upcoming})`; }
                 }
                 if (active.length === 1 && !past.length) {
                     $('.bookings-link').attr('href', 'view-reservation.html');
                     $('.bookings-form-action').attr('action', 'view-reservation.html');
                 }
+            }
+
+            // Update past bookings count
+            if (past.length) {
+                $('.bookings-past-count').text(`(${past.length})`);
             }
 
             // Render bookings if we're on the bookings page

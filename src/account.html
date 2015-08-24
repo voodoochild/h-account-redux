@@ -1,10 +1,10 @@
-@@include("_head.html", { "title": "Your account" })
+@@include("_head.html", { "title": "Settings" })
   @@include("_banner.html")
   <main>
     <h1><span class="profile-username">Jo</span> Smith <img class="avatar" src="images/Jo.png" /></h1>
     <ul class="page-nav">
       <li>
-        <a href="manage.html">Update your account details
+        <a href="manage.html">Update your account settings
           <span class="about">Change your email address, password and other settings.</span>
         </a>
       </li>
@@ -29,6 +29,9 @@
         </a>
       </li>
     </ul>
+    <div class="account-sign-out">
+      <a href="" onclick="window.signOut(true);return false;">Sign out</a>
+    </div>
   </main>
   @@include("_footer.html")
   <script src="js/bundle.js"></script>

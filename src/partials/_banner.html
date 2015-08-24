@@ -15,7 +15,7 @@
           <a class="anon" href="rewards-pillar.html">Hotels.com Rewards</a>
           <a class="member" href="rewards-activity.html">Your Rewards</a>
         </li>
-        <li class="member"><a href="account.html">Account details</a></li>
+        <li class="member"><a href="account.html">Settings</a></li>
         <li><a href="#">Call customer service</a></li>
         <li>
           <a class="anon" href="" onclick="window.goToSignInPage();return false;">Sign in</a>
@@ -27,15 +27,18 @@
         </li>
       </ul>
       <ul class="extended">
-        <li>
-          <a class="anon" href="" onclick="window.goToSignInPage();return false;">Sign in</a>
-          <a class="member" href="" onclick="window.signOut(true);return false;">Sign out</a>
-        </li>
+        <li class="anon"><a href="" onclick="window.goToSignInPage();return false;">Sign in</a></li>
         <li class="avatar-wrap">
           <img class="anon avatar" src="images/account-icon.png" />
-          <img class="member avatar" src="images/account-icon.png" />
         </li>
-        <li class="member"><a href="account.html">Account details</a></li>
+        <li id="user-nav-toggle" class="member">
+          <img class="member avatar" src="images/account-icon.png" />
+          <span class="profile-username">Jo</span> Smith
+          <ul id="user-nav" class="hidden member">
+            <li><a href="account.html">Settings</a></li>
+            <li><a href="" onclick="window.signOut(true);return false;">Sign out</a></li>
+          </ul>
+        </li>
         <li>
           <a class="anon" href="rewards-pillar.html">Hotels.com Rewards</a>
           <a class="member" href="rewards-activity.html">Your Rewards</a>
